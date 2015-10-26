@@ -1,2 +1,3 @@
-# Webres
-Web service for creating and sharing web based resume
+# WebRes
+
+a [Sails](http://sailsjs.org) application
