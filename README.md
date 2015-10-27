@@ -10,11 +10,12 @@ a [Sails](http://sailsjs.org) application
 - Install node (tested 4.2.1)
 
 #### Install sails.js
-
+(version 0.11.2)
 (sudo if needed) 
 
 ```
 npm -g install sails
+npm install
 ```
 
 #### Run server
