@@ -1,6 +1,4 @@
-@import 'customVariables';
-@import 'bootstrap';
-@import 'bootstrap/theme';
+
 $main-width: 800px;
 $profileinf-padding: 20px;
 $themecolor: #CBEDFE;
@@ -34,7 +32,7 @@ $theme-grey: #565656;
 
 }
 
-.view-tab {
+.view-tab, .view-current {
 	min-width: 80px;
 	text-align: center;
 	display: inline-block;
@@ -44,11 +42,23 @@ $theme-grey: #565656;
 	color: $theme-grey;
 }
 
+.view-tab {
+	// cursor: crosshair;
+	cursor: pointer;
+}
+
 .view-current {
-	@extend .view-tab;
 	color: #000000;
 	border-bottom: 3px;
 	border-width: 3px;
 	border-bottom-style: solid;
 	border-color: $themecolor;
+}
+
+.infoset-left, .infoset-beef {
+	display: inline-block;
+}
+
+.infoset-left-end, .infoset-left-start {
+	text-align: center;
 }
