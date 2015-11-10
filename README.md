@@ -26,3 +26,9 @@ sails lift
 ```
 
 Now if terminal shows no errors you'll have server up and running. You can open `http://localhost:1337` on your browser.
+
+### Automatic build for SASS files
+
+```
+sass --watch assets/styles/:.tmp/public/styles/ node_modules/bootstrap-sass/assets/stylesheets/:.tmp/public/styles/
+```
