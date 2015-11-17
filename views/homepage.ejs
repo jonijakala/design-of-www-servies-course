@@ -11,7 +11,9 @@
         <div class="view-tab">PORTOFOLIO</div>
         <div class="view-tab">CONTACT</div>
     </div>
-    <div class="content">
+    <div class="content" ng-app="webresApp">
+
+        <!-- <button type="submit" class="btn btn-primary btn-lg" ng-click="addModule()">Add Module</button> -->
         <div class="module info">
             <div class="module-header">
                 <span class="module-title">EDUCATION</span>
@@ -32,7 +34,7 @@
                     </ul>
                     <p>Studying such architecture very amaze. </p>
                 </div>
-            </div> <!-- END INFOSET -->
+            </div> 
             <div class="infoset">
                 <div class="infoset-left">
                     <div class="infoset-end">2008</div>
@@ -45,11 +47,14 @@
                     <div class="infoset-beef-title">Perniö High School</div>
                     <p>Much nice school.</p>
                 </div>
-            </div> <!-- END INFOSET -->
-        </div> <!-- END MODULE-INFO -->
+            </div> 
+        </div> 
+        <div ng-view class="content">
+            <p>asdf</p>
+        </div>
 
 
-        <div class="module info">
+       <!--  <div class="module info">
             <div class="module-header">
                 <span class="module-title">WORK EXPERIENCE</span>
             </div>
@@ -65,7 +70,7 @@
                     <div class="infoset-beef-title">ARC Architechts</div>
                     <p>Photoshop designer and MS paint expert.</p>
                 </div>
-            </div> <!-- END INFOSET -->
+            </div> 
             <div class="infoset">
                 <div class="infoset-left">
                     <div class="infoset-end">2007/02</div>
@@ -78,16 +83,16 @@
                     <div class="infoset-beef-title">Rostock Solutions Oy</div>
                     <p>Internal trainee on future tech solutions department.</p>
                 </div>
-            </div> <!-- END INFOSET -->
-        </div> <!-- END MODULE-INFO -->
+            </div> 
+        </div>  -->
 
     </div>
 </div>
-<div class="container" ng-app="myApp" ng-controller="MainController">
+<!-- <div class="container" ng-controller="MainController">
     <h1>Hello world!!!</h1>
     <h1>{{ title }}</h1>
     <p>This text is made by Chris. Initial page and layout should appear here eventually.</p>
     <p>Also the styling is done with SASS. You may put .scss files to assets/styles. Then add 'import' to importer.scss and it should compile to CSS</p>
     <p>The Angular.min file is also now in Git. Check assets/js/dependencies/angular.min.js</p>
     <p>kukksdfasdf</p>
-</div>
+</div> -->
