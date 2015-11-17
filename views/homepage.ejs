@@ -49,8 +49,14 @@
                 </div>
             </div> 
         </div> 
+
+        <!-- <div ng-repeat="moduleinfo in modules"> -->
+        <div ng-repeat="moduleinfo in modules">
+        <cv-info-module module="{{moduleinfo}}"></cv-info-module>
+        </div>
+        <!-- </div> -->
         <div ng-view class="content">
-            <p>asdf</p>
+            <!-- <p>asdf</p> -->
         </div>
 
 

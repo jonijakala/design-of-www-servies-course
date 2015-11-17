@@ -1,24 +1,27 @@
 <div class="module info">
 <button type="submit" class="btn btn-primary btn-lg" ng-click="addModule()">Add Module</button>
-<button type="submit" class="btn btn-primary btn-lg" ng-click="removeModule()">Remove Module</button>
-<button type="submit" class="btn btn-primary btn-sm" ng-click="addInfoSet()">Add InfoSet</button>
+<!-- <button type="submit" class="btn btn-primary btn-lg" ng-click="removeModule()">Remove Module</button> -->
+<!-- <button type="submit" class="btn btn-primary btn-sm" ng-click="addInfoSet()">Add InfoSet</button> -->
+<button type="submit" class="btn btn-primary btn-sm" ng-click="editMode()">Activate edit mode</button>
 	<div class="module-header">
-		<span class="module-title">WORK EXPERIENCE</span>
+		<span class="module-title edit">WORK EXPERIENCE</span>
 	</div>
 	<div class="infoset">
 		<div class="infoset-left">
-			<div class="infoset-end"></div>
+			<div class="infoset-end edit">2016</div>
 			<div class="infoset-until">
 				<span class="glyphicon glyphicon-option-vertical" aria-hidden="true"></span>
 			</div>
-			<div class="infoset-start">2013/03</div>
+			<div class="infoset-start edit">2013/03</div>
 		</div>
 		<div class="infoset-beef">
-			<div class="infoset-beef-title">ARC Architechts</div>
-			<p>Photoshop designer and MS paint expert.</p>
-			<ul ng-repeat="singleModule in modules">
-				<li>{{singleModule.value}}</li>
-			</ul>	
+			<div class="infoset-beef-title edit">ARC Architechts</div>
+			<p class="edit">Photoshop designer and MS paint expert.</p>
+			
 		</div>
 	</div> <!-- END INFOSET -->
+
+
 </div> <!-- END MODULE-INFO -->
+<!-- <cv-info-module module="{'title':'Tää on tittelikikkel'}"></cv-info-module> -->
+<cv-info-module ng-repeat="cvmodule in modules" module="cvmodule"></cv-info-module>

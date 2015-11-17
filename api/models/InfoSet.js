@@ -14,10 +14,9 @@ module.exports = {
   		defaultsTo: 'Edit this title',
   	},
 
-  	module: { model: 'InfoModule' },
-
   	// value: { type: 'string' },
-
+  	// module: { model: 'InfoModule' },
+  	
   	startDate: { type: 'string' },
 
   	endDate: { type: 'string' },

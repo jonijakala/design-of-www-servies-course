@@ -6,7 +6,7 @@ module.exports = {
     });
   },
   addModule: function(next) {
-    Module.create({value: 'new module!'}).exec(function(err, module) {
+    InfoModule.create().exec(function(err, module) {
       if(err) throw err;
       next(module);      
     });

@@ -8,11 +8,14 @@
 module.exports = {
 
   attributes: {
-  	title: { type: 'string' },
-  	infosets: {
-  		collection: 'InfoSet',
-  		via: 'module'
-  	}
+  	title: { 
+  		type: 'string',
+  		defaultsTo: 'Edit InfoModule title!!'
+  	},
+  	// infosets: {
+  	// 	collection: 'InfoSet',
+  	// 	via: 'module'
+  	// }
   }
 };
 
