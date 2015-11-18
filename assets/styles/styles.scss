@@ -158,6 +158,10 @@ $moduleMargin: 10px;
 	color: #7F7F7F;
 }
 
+cv-info-module {
+	@extend .content;
+}
+
 ul {
 	margin-bottom: 2px;
 }
