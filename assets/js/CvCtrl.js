@@ -46,9 +46,11 @@ webresApp.controller('CvCtrl', ['$scope', '$rootScope', 'CvService', function($s
 
 	$scope.editMode = function() {
 		var edits = document.getElementsByClassName("edit");
+		var bool = (!edits[0].getAttribute("contenteditable"));
+		console.log(bool);
 		for (var i=0; i<edits.length; i++) {
 			console.log('Log edits: ' + edits[i]);
-			edits[i].setAttribute("contenteditable", "true");
+			edits[i].setAttribute("contenteditable", bool.toString());
 		}
 		// console.log('Log edits: ' + edits[0]);
 		// edits[0].
