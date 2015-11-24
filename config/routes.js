@@ -35,7 +35,11 @@ module.exports.routes = {
   '/': {
     view: 'homepage'
   },
-  'post /User': 'UserController.create'
+  'post /User': 'UserController.create',
+  'GET /modules/getModules': 'ModuleController.getModules',
+  'POST /modules/removeModule': 'ModuleController.removeModule',
+  'POST /modules/addModule': 'ModuleController.addModule',
+  'POST /modules/addInfoSet': 'InfoSetController.addInfoSet',
 
   /***************************************************************************
   *                                                                          *

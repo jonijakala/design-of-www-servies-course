@@ -1,3 +1,3 @@
-app.controller('MainController', ['$scope', function($scope) { 
+webresApp.controller('MainController', ['$scope', function($scope) { 
   $scope.title = 'Test title'; 
 }]);
