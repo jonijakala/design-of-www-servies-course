@@ -17,6 +17,7 @@ module.exports = {
 		});
 	},
 	removeModule: function(req, res) {
+		// console.log('req: ' + JSON.stringify(req));
 		var modulValue = (req.body.value) ? req.body.value : undefined;
 		console.log('attempting to removeModule: ' + modulValue);
 		ModuleService.removeModule(modulValue, function(success) {

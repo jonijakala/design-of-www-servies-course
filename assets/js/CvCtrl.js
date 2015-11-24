@@ -30,10 +30,13 @@ webresApp.controller('CvCtrl', ['$scope', '$rootScope', 'CvService', function($s
 		var index = $scope.modules.indexOf(module);
 		console.log('index: ' + index);
 		index = (index >= 0) ? index : 0;
-		$scope.modules.splice(index, 1);
+		console.log('index: ' + index);
+		console.log('$scope.modules: ' + $scope.modules);
+		// $scope.modules.splice(index, 1);
 		
 		CvService.removeModule(module).then(function(response) {
 			$scope.modules.splice($scope.modules.indexOf(module), 1);
+			console.log('$scope.modules: ' + $scope.modules);
 		});
 	};
 
@@ -81,11 +84,17 @@ webresApp.controller('CvCtrl', ['$scope', '$rootScope', 'CvService', function($s
     	restrict: 'E',
     	scope: {
      		module: '=module',
-			removeModule: '&'
+			extRemove: '&removeModule'
      		// title: '@module.title'
     	},
     	templateUrl: 'templates/infoModule2.html',
-    	};
+    	link: function(scope, element, attrs) {
+    		
+    		scope.remove = function(module) {
+    			removeModule(module);
+    		}; 
+    	},
+    };
 })
 .directive('cvInfoSet', function() {
 	return {
