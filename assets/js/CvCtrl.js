@@ -3,12 +3,12 @@ webresApp.controller('CvCtrl', ['$scope', '$rootScope', 'CvService', function($s
 	$scope.modules = [];
 	$scope.modul1 = {'title':'This is a Title!!'};
 
-	// $scope.modules.push({'title':'this is a title'});
-	// $scope.modules.push({'title':'fasdfs'});
+	$scope.modules.push({'title':'this is a title'});
+	$scope.modules.push({'title':'fasdfs'});
 
-	CvService.getModules().then(function(response) {
-		$scope.modules = response;
-	});
+	// CvService.getModules().then(function(response) {
+	// 	$scope.modules = response;
+	// });
 
 	$scope.addModule = function($compile) {
 		CvService.addModule().then(function(response) {
@@ -26,12 +26,6 @@ webresApp.controller('CvCtrl', ['$scope', '$rootScope', 'CvService', function($s
 	};
 
 	$scope.removeModule = function(module) {
-		console.log('attempting: removeModule on following: ' + module);
-		var index = $scope.modules.indexOf(module);
-		console.log('index: ' + index);
-		index = (index >= 0) ? index : 0;
-		$scope.modules.splice(index, 1);
-		
 		CvService.removeModule(module).then(function(response) {
 			$scope.modules.splice($scope.modules.indexOf(module), 1);
 		});
@@ -46,11 +40,9 @@ webresApp.controller('CvCtrl', ['$scope', '$rootScope', 'CvService', function($s
 
 	$scope.editMode = function() {
 		var edits = document.getElementsByClassName("edit");
-		var bool = (!edits[0].getAttribute("contenteditable"));
-		console.log(bool);
 		for (var i=0; i<edits.length; i++) {
 			console.log('Log edits: ' + edits[i]);
-			edits[i].setAttribute("contenteditable", bool.toString());
+			edits[i].setAttribute("contenteditable", "true");
 		}
 		// console.log('Log edits: ' + edits[0]);
 		// edits[0].
@@ -81,18 +73,14 @@ webresApp.controller('CvCtrl', ['$scope', '$rootScope', 'CvService', function($s
     	restrict: 'E',
     	scope: {
      		module: '=module',
-			removeModule: '&'
      		// title: '@module.title'
     	},
     	templateUrl: 'templates/infoModule2.html',
+    	// controller: function($scope, $element) {
+    	// 	console.log('add2');
+    	// 	$scope.add = function () {
+     //    		var el = $compile( '<cv-info-module text="modul1"></cv-info-module>' )( $scope );
+     //    		$element.parent().append( el );
+     //  		};
     	};
-})
-.directive('cvInfoSet', function() {
-	return {
-		restrict: 'E',
-		scope: {
-			infomodule: '=infoset',
-		},
-		templateUrl: 'templates/infoSet.html',
-	};
 });

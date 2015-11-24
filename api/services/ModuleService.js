@@ -1,6 +1,6 @@
 module.exports = {
   getModules: function(next) {
-    InfoModule.find().exec(function(err, modules) {
+    Module.find().exec(function(err, modules) {
       if(err) throw err;
       next(modules);
     });
@@ -12,7 +12,7 @@ module.exports = {
     });
   },
   removeModule: function(modulValue, next) {
-    InfoModule.destroy(modulValue).exec(function(err, module) {
+    Module.destroy({value: 'new module!'}).exec(function(err, module) {
       if(err) throw err;
       next(module);      
     });
