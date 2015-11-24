@@ -7,6 +7,8 @@ webresApp.config(['$routeProvider',
     $routeProvider.when('/', {
       templateUrl: '/templates/infoModule.html',
       controller: 'CvCtrl'
+    }).when('/portfolio', {
+      templateUrl: '/templates/portfolio.html',	
     }).otherwise({
       redirectTo: '/',
       caseInsensitiveMatch: true
