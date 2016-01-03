@@ -1,33 +1,62 @@
 (function() {
-	'use strict';
-	
-    angular.module('appRoutes', [])
-        .config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
+    'use strict';
 
-            $routeProvider
+    angular
+        .module('appRoutes', [])
+        .config(['$urlRouterProvider', '$stateProvider', AppRoutes]);
 
-            // home page
-                .when('/', {
-                templateUrl: 'app/main/home.html',
-                controller: 'MainController',
-                controllerAs: 'vm'
-            })
+    function AppRoutes($urlRouterProvider, $stateProvider) {
 
-            .when('/nerds', {
-                templateUrl: 'app/nerd/nerd.html',
-                controller: 'NerdController',
-                controllerAs: 'vm'
-            })
+        // $routeProvider
 
-            .when('/geeks', {
-                templateUrl: 'app/geek/geek.html',
-                controller: 'GeekController',
-                controllerAs: 'vm'
+        // // home page
+        //     .when('/', {
+        //         templateUrl: 'app/main/profile.html',
+        //         controller: 'ProfileController',
+        //         controllerAs: 'vm'
+        //     })
+        //     .when('/nerds', {
+        //         templateUrl: 'app/nerd/nerd.html',
+        //         controller: 'NerdController',
+        //         controllerAs: 'vm'
+        //     })
+        //     .when('/geeks', {
+        //         templateUrl: 'app/geek/geek.html',
+        //         controller: 'GeekController',
+        //         controllerAs: 'vm'
+        //     });
+
+        // $locationProvider.html5Mode(true);
+        $urlRouterProvider
+            .otherwise(function($injector) {
+                $injector.get('$state').go('404', {}, {
+                    location: false
+                });
             });
 
-            $locationProvider.html5Mode(true);
-
-        }]);
+        $stateProvider
+            .state('main', {
+                url: '',
+                templateUrl: 'app/main/main.html',
+                controller: 'MainController',
+                controllerAs: 'main'
+            })
+            .state('main.profile', {
+                url: '/profile',
+                templateUrl: 'app/profile/infoModule.html',
+                controller: 'ProfileController',
+                controllerAs: 'vm'
+            })
+            .state('material', {
+                url: '/material',
+                templateUrl: 'app/material/material.html',
+                controller: 'MaterialController',
+                controllerAs: 'vm'
+            })
+            .state('404', {
+                templateUrl: 'app/404/tmpl404.html'
+            });
+    }
 })();
 
 

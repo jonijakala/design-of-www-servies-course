@@ -1,0 +1,66 @@
+<div class="module info">
+    <div class="module-header">
+        <span class="module-title edit">WORK EXPERIENCE</span>
+    </div>
+    <div class="infoset">
+        <div class="infoset-left">
+            <div class="infoset-end edit">2016</div>
+            <div class="infoset-until">
+                <span class="glyphicon glyphicon-option-vertical" aria-hidden="true"></span>
+            </div>
+            <div class="infoset-start edit">2013/03</div>
+        </div>
+        <div class="infoset-beef">
+            <div class="infoset-beef-title edit">ARC Architechts</div>
+            <p class="edit">Photoshop designer and MS paint expert.</p>
+        </div>
+    </div>
+    <!-- END INFOSET -->
+</div>
+<!-- END MODULE-INFO -->
+<div class="module info">
+    <div class="module-header">
+        <span class="module-title edit">EDUCATION</span>
+    </div>
+    <div class="infoset">
+        <div class="infoset-left">
+            <div class="infoset-end edit">2018</div>
+            <div class="infoset-until">
+                <span class="glyphicon glyphicon-option-vertical" aria-hidden="true"></span>
+            </div>
+            <div class="infoset-start edit">2010</div>
+        </div>
+        <div class="infoset-beef">
+            <div class="infoset-beef-title edit">Aalto University</div>
+            <ul>
+                <li class="edit">Major: Building architecture</li>
+                <li class="edit">Minor: Landscape design</li>
+            </ul>
+            <p class="edit">Studying such architecture very amaze. </p>
+        </div>
+    </div>
+    <div class="infoset">
+        <div class="infoset-left">
+            <div class="infoset-end edit">2008</div>
+            <div class="infoset-until">
+                <span class="glyphicon glyphicon-option-vertical" aria-hidden="true"></span>
+            </div>
+            <div class="infoset-start edit">2005</div>
+        </div>
+        <div class="infoset-beef">
+            <div class="infoset-beef-title edit">Perniö High School</div>
+            <p class="edit">Much nice school.</p>
+        </div>
+    </div>
+</div>
+<!-- <cv-info-module module="{'title':'Tää on tittelikikkel'}"></cv-info-module> -->
+<cv-info-module ng-repeat="cvmodule in vm.modules" module="cvmodule"></cv-info-module>
+<div id="testrow">
+    <button type="submit" class="test btn btn-primary btn-sm" ng-click="addModule()">Add Module</button>
+    <button type="submit" class="test btn btn-primary btn-sm" ng-click="removeModule()">Remove Module</button>
+    <!-- <button type="submit" class="btn btn-primary btn-sm" ng-click="addInfoSet()">Add InfoSet</button> -->
+    <!-- <button type="submit" class="test btn btn-primary btn-sm" ng-click="editMode()">Activate edit mode</button> -->
+    <button type="button" ng-click="editMode()" class="btn btn-default btn-sm">
+        <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+    </button>
+</div>

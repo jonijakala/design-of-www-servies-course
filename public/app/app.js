@@ -1,14 +1,16 @@
 (function() {
     'use strict';
 
-    angular.module('sampleApp', [
-        'ngRoute',
+    angular.module('webresApp', [
+        // 'ngRoute',
+        'ui.router',
         'appRoutes',
+        'ProfileCtrl',
         'MainCtrl',
-        'NerdCtrl',
-        'NerdService',
-        'GeekCtrl',
-        'GeekService'
+        // 'NerdCtrl',
+        // 'NerdService',
+        // 'GeekCtrl',
+        // 'GeekService'
     ]);
 
 })();
