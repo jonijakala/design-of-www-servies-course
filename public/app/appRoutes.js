@@ -9,17 +9,20 @@
             // home page
                 .when('/', {
                 templateUrl: 'app/main/home.html',
-                controller: 'MainController'
+                controller: 'MainController',
+                controllerAs: 'vm'
             })
 
             .when('/nerds', {
                 templateUrl: 'app/nerd/nerd.html',
-                controller: 'NerdController'
+                controller: 'NerdController',
+                controllerAs: 'vm'
             })
 
             .when('/geeks', {
                 templateUrl: 'app/geek/geek.html',
-                controller: 'GeekController'
+                controller: 'GeekController',
+                controllerAs: 'vm'
             });
 
             $locationProvider.html5Mode(true);

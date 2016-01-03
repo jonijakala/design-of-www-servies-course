@@ -1,5 +1,12 @@
-angular.module('GeekCtrl', []).controller('GeekController', function($scope) {
+(function() {
+    'use strict';
 
-	$scope.tagline = 'The square root of life is pi!';	
+    angular
+        .module('GeekCtrl', [])
+        .controller('GeekController', GeekController);
 
-});
+    function GeekController() {
+            var vm = this;
+            vm.tagline = 'The square root of life is pi!';
+        }
+})();
