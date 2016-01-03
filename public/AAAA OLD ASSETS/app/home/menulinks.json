@@ -1,0 +1,45 @@
+[
+	[
+		["title", "#"],
+		["Spend Dashboard", "#"],
+		["Spend Reports", "#"],
+		["Price Opportunities", "#"],
+		["Analytics Dashboard", "#"],
+		["Payment Terms Dashboard", "#"],
+		["Payment Terms Reports'", "#"],
+		["Payment Terms Opportunities", "#"],
+		["Inventory Dashboard", "#"],
+		["Inventory Reports", "#"],
+		["Pivot Table", "#"],
+		["Supplier Country", "#"]
+	],
+	[
+		["Dashboard", "#"]
+		["Project Reports", "#"]
+		["Project Details", "#"]
+		["Project Gantt", "#"]
+		["Idea Reports", "#"]
+		["Idea Details", "#"]
+		["Pivot Table", "#"]
+	],
+	[
+		["Dashboard", "#"]
+		["Direct Dashboard", "#"]
+		["Time Series", "#"]
+		["Reports", "#"]
+		["Reference Export", "#"]
+		["Data Points", "#"]
+		["Pivot Table", "#"]
+		["Impacts", "#"]
+	],
+	[
+		["Financial Measurement Dashboard", "#"]
+		["Financial Measurement Reports", "#"]
+		["Currency Fluctuation Reports", "#"]
+		["Market Fluctuation Reports", "#"]
+		["Compliance Dashboard", "#"]
+		["Compliance Reports", "#"]
+		["Contract Reports", "#"]
+		["Pivot Table", "#"]
+	]
+]

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head lang="en">
+    <meta charset="UTF-8" />
+    <meta name="description" content="Sievo dashboard" />
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+
+    <title>Sievo</title>
+
+    <!-- Vendor JS -->
+    <script src="../bower_components/jquery/dist/jquery.js"></script>
+    <script src="../bower_components/angular/angular.js"></script>
+    <script src="../bower_components/angular-aria/angular-aria.js"></script>
+    <script src="../bower_components/angular-animate/angular-animate.js"></script>
+    <script src="../bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="../bower_components/angular-animate/angular-animate.js"></script>
+    <script src="../bower_components/angular-loading-bar/build/loading-bar.js"></script>
+    <script src="../bower_components/angular-material/angular-material.js"></script>
+    <script src="../bower_components/angular-material/angular-material-mocks.js"></script>
+    <script src="../bower_components/angular-google-chart/ng-google-chart.js"></script>
+
+
+
+    <!-- Vendor CSS -->
+    <link rel="stylesheet" href="../bower_components/angular-loading-bar/build/loading-bar.css">
+    <link rel="stylesheet" href="../bower_components/font-awesome/css/font-awesome.css">
+    <link rel="stylesheet" href="../bower_components/angular-material/angular-material.css">
+    <link rel="stylesheet" href="../bower_components/angular-material/angular-material.layouts.css">
+    <link rel="stylesheet" href="css/styles.css">
+
+
+    <!-- Vendor FONTS -->
+    <link rel="icon" href="/client/favicon.ico">
+
+</head>
+<body>
+    <div ui-view></div>
+
+    <!-- Scripts below -->
+    <script src="app/app.module.js"></script>
+    <script src="app/home/home.module.js"></script>
+    <script src="app/material/material.module.js"></script>
+
+    <script src="app/app.routing.js"></script>
+
+    <script src="app/home/home.controller.js"></script>
+    <script src="app/material/material.controller.js"></script>
+</body>
+</html>

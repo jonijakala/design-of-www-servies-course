@@ -1,0 +1,17 @@
+/*
+	This file imports all sass files for compiling. Imported files in order:
+	1. Bootswatch cosmos theme variables
+	2. Bootswatch cosmos theme
+	3. Bootstrap-sass
+	4. Custom styling
+
+	Currently all styling changes should go into the file '_customStyles.scss'
+*/
+
+// @import 'bootstrap-theme/variables';
+// @import "../../bower_components/bootstrap-sass/assets/stylesheets/bootstrap";
+// @import 'bootstrap-theme/bootswatch';
+// @import "customStyles";
+
+@import 'materialStyles';
+// @import "../../bower_components/angular-material/angular-material";

@@ -1,0 +1,86 @@
+/*
+	This file imports all sass files for compiling. Imported files in order:
+	1. Bootswatch cosmos theme variables
+	2. Bootswatch cosmos theme
+	3. Bootstrap-sass
+	4. Custom styling
+
+	Currently all styling changes should go into the file '_customStyles.scss'
+*/
+.green {
+  background-color: #9fcb00 !important; }
+
+.red {
+  background-color: #cc023e !important; }
+
+.yellow {
+  background-color: #ffb600 !important; }
+
+.blue {
+  background-color: #00b6ff !important; }
+
+.grey {
+  background-color: #595959 !important; }
+
+body {
+  background-color: rgba(0, 0, 0, 0.02);
+  height: auto; }
+
+md-content {
+  background-color: inherit; }
+
+#header {
+  background-color: black; }
+
+.toolbar-links * {
+  box-sizing: border-box;
+  -webkit-transition: all 0.35s ease;
+  transition: all 0.35s ease; }
+
+.toolbar-links li {
+  display: inline-block;
+  list-style: outside none none;
+  overflow: hidden; }
+
+.toolbar-links a {
+  padding: 0.3em 0;
+  color: rgba(255, 255, 255, 0.5);
+  display: inline-block; }
+
+.toolbar-links a:before,
+.toolbar-links a:after {
+  position: absolute;
+  -webkit-transition: all 0.35s ease;
+  transition: all 0.35s ease; }
+
+.toolbar-links a:before {
+  bottom: 100%;
+  display: block;
+  height: 3px;
+  width: 100%;
+  content: ""; }
+
+.toolbar-links a.spend:before {
+  background-color: #ffb600; }
+
+.toolbar-links a.savings:before {
+  background-color: #9fcb00; }
+
+.toolbar-links a.budgeting:before {
+  background-color: #00b6ff; }
+
+.toolbar-links a.procurement:before {
+  background-color: #cc023e; }
+
+.toolbar-links a:after {
+  padding: 0.3em 0;
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  content: attr(data-hover);
+  color: white;
+  white-space: nowrap; }
+
+.toolbar-links li:hover a,
+.toolbar-links .current a {
+  transform: translateY(100%); }

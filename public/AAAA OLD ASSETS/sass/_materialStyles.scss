@@ -1,0 +1,99 @@
+$opacity: 1;
+$sievo-red: rgba(204, 2, 62, $opacity);
+$sievo-green: rgba(159, 203, 0, $opacity);
+$sievo-blue: rgba(0, 182, 255, $opacity);
+$sievo-yellow: rgba(255, 182, 0, $opacity);
+$sievo-grey: rgba(89, 89, 89, $opacity);
+
+.green {
+    background-color: $sievo-green!important;
+}
+
+.red {
+    background-color: $sievo-red!important;
+}
+
+.yellow {
+    background-color: $sievo-yellow!important;
+}
+
+.blue {
+    background-color: $sievo-blue!important;
+}
+
+.grey {
+    background-color: $sievo-grey!important;
+}
+
+body {
+    background-color: rgba(0, 0, 0, 0.02);
+    height: auto;
+}
+
+md-content {
+    background-color: inherit;
+}
+
+#header {
+    background-color: black;
+}
+
+//Navigation bar button animation
+.toolbar-links * {
+  box-sizing: border-box;
+  -webkit-transition: all 0.35s ease;
+  transition: all 0.35s ease;
+}
+.toolbar-links li {
+  display: inline-block;
+  list-style: outside none none;
+  overflow: hidden;
+}
+.toolbar-links a {
+  padding: 0.3em 0;
+  color: rgba(255, 255, 255, 0.5);
+  display: inline-block;
+}
+.toolbar-links a:before,
+.toolbar-links a:after {
+  position: absolute;
+  -webkit-transition: all 0.35s ease;
+  transition: all 0.35s ease;
+}
+.toolbar-links a:before {
+  bottom: 100%;
+  display: block;
+  height: 3px;
+  width: 100%;
+  content: "";
+}
+
+.toolbar-links a.spend:before {
+  background-color: $sievo-yellow;
+}
+
+.toolbar-links a.savings:before {
+  background-color: $sievo-green;
+}
+
+.toolbar-links a.budgeting:before {
+  background-color: $sievo-blue;
+}
+
+.toolbar-links a.procurement:before {
+  background-color: $sievo-red;
+}
+
+.toolbar-links a:after {
+  padding: 0.3em 0;
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  content: attr(data-hover);
+  color: white;
+  white-space: nowrap;
+}
+.toolbar-links li:hover a,
+.toolbar-links .current a {
+  transform: translateY(100%);
+}
