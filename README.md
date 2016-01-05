@@ -1,6 +1,6 @@
 # WebRes
 
-a [Sails](http://sailsjs.org) application
+Internet resume service
 
 ### Instructions
 
@@ -8,27 +8,19 @@ a [Sails](http://sailsjs.org) application
 
 - Install npm (tested 2.14.7)
 - Install node (tested 4.2.1)
-
-#### Install sails.js
-(version 0.11.2)
-(sudo if needed) 
+- Install bower
+- Install gulp (`npm install gulp -g`)
 
 ```
-npm -g install sails
 npm install
+bower install
 ```
 
-#### Run server
+### Run server
 Navigate to project root via commandline. Then:
 
 ```
-sails lift
+gulp
 ```
 
-Now if terminal shows no errors you'll have server up and running. You can open `http://localhost:1337` on your browser.
-
-### Automatic build for SASS files
-
-```
-sass --watch assets/styles/:.tmp/public/styles/ node_modules/bootstrap-sass/assets/stylesheets/:.tmp/public/styles/
-```
+Now if terminal shows no errors you'll have server up and running. You can open `http://localhost:8080` on your browser.
