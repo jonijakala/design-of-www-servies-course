@@ -9,7 +9,7 @@ Internet resume service
 - Install npm (tested 2.14.7)
 - Install node (tested 4.2.1)
 - Install bower
-- Install gulp
+- Install gulp (`npm install gulp -g`)
 
 ```
 npm install
