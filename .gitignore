@@ -117,3 +117,15 @@ nbproject
 .idea
 .node_history
 .sass-cache
+
+*.csv
+*.dat
+*.gz
+
+pids
+logs
+results
+
+npm-debug.log
+
+public/libs
