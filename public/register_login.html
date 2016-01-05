@@ -7,18 +7,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="WebRes" content="A new way to create beautiful Resumes">
+    <meta name="author" content="">
 
     <title>WebRes - A new way to create beautiful Resumes</title>
 
     <!-- Bootstrap Core CSS - Uses Bootswatch Flatly Theme: http://bootswatch.com/flatly/ -->
-    <link rel="stylesheet" href="libs/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="libs/bootstrap/dist/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css" integrity="sha384-aUGj/X2zp5rLCbBxumKTCw2Z50WgIr1vs/PFN4praOTvYXWlVyh2UtNUU0KAUhAX" crossorigin="anonymous">
 
     <!-- Custom CSS -->
     <link href="css/frontPage.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
-    <link href="libs/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
     <link href="http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
 
@@ -38,21 +39,18 @@
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header page-scroll">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
                     <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" id="webres" href="#page-top">&ang;WebRes</a>
+                <a class="navbar-brand" id="webres" href="index.html">&ang;WebRes</a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <div class="collapse navbar-collapse" id="navbar-collapse">
                 <ul class="nav navbar-nav navbar-right">
-                    <li class="hidden">
-                        <a href="#page-top"></a>
-                    </li>
                     <li><a href="#about">About</a></li>
                     <li><a href="#contact">Contact</a></li>
                     </div>
@@ -65,7 +63,8 @@
     
     <div class="container">
         <div class="row row-content">
-                <div class="col-sm-4 col-xs-12" id="login_register">
+                <div class="col-sm-4 col-xs-12" id="login">
+                    <p style="padding:20px;"></p>
                     <h4>Log in</h4>
                     <form class="form-horizontal" role="form">
                 <div class="form-group">
@@ -79,19 +78,18 @@
                             <div class="input-group-addon"><i class="fa fa-key"></i></div>
                     </div>
                 </div>
-                <div class="controls">
-                    <a href="/users/password/new">Forgot your password?</a>
-                    <br />
-                </div>
                 <div class="log-in">
                     <input class="btn btn-info" name="commit" type="submit" value="Login" />
-                </div> 
-            </form>
-             <a class="btn btn-inline-icon" href="/users/auth/linkedin" rel="nofollow">
-                <i class="fa fa-linkedin" ></i> Login With Linkedin </a> 
+                    <a class="btn btn-inline-icon" href="/users/auth/linkedin" rel="nofollow">
+                    Login With Linked<i class="fa fa-linkedin" ></i> </a> 
                 </div>
-            
-            <div class="col-sm-6 col-xs-12 col-sm-offset-1">
+                <div class="controls">
+                    <a href="/users/password/new">Forgot your password?</a>
+                </div>
+            </form>
+            </div>        
+            <div class="col-sm-6 col-xs-12 col-sm-offset-1" id="register">
+                <p style="padding:20px;"></p>
                	<h4>Register</h4>
                 <form class="form-horizontal" role="form">
                 <div class="form-group">
@@ -111,7 +109,7 @@
                     </div>
                     <p style="padding=10px;"></p>
                 <div class="register">
-                    <input class="btn btn-info" name="commit" type="submit" value="register" />
+                    <input class="btn btn-info" name="commit" type="submit" value="Register" />
                 </div> 
             </form>
                 </div>
@@ -126,24 +124,24 @@
             <div class="container">
                 <div class="row">
                     <div class="footer-col col-xs-12 col-md-6">
-                        <h3>Get to know us more</h3>
+                        <h3 id="about">Get to know us more</h3>
                         <p>WebRes is a web project undertaken by 3 students Chris, Joni and Michael as part of the WWW Design Course at Aalto University, Computer Science Department.</p>
                     </div>
                     
                     <div class="footer-col col-xs-12 col-md-4 col-md-offset-1">
-                        <h3>Connect with Us</h3>
+                        <h3 id="contact">Connect with Us</h3>
                         <ul class="list-inline">
                             <li>
-                                <a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-facebook"></i></a>
+                                <a href="http://facebook.com/WebRes" class="btn-social btn-outline"><i class="fa fa-fw fa-facebook"></i></a>
                             </li>
                             <li>
-                                <a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-google-plus"></i></a>
+                                <a href="http://plus.google.com/WebRes" class="btn-social btn-outline"><i class="fa fa-fw fa-google-plus"></i></a>
                             </li>
                             <li>
-                                <a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-twitter"></i></a>
+                                <a href="http://twitter.com/WebRes" class="btn-social btn-outline"><i class="fa fa-fw fa-twitter"></i></a>
                             </li>
                             <li>
-                                <a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-linkedin"></i></a>
+                                <a href="http://linkedin.com/WebRes" class="btn-social btn-outline"><i class="fa fa-fw fa-linkedin"></i></a>
                             </li>
                             
                         </ul>
