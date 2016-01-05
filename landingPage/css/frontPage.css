@@ -6,21 +6,20 @@ body {
 
 .row-content {
     margin: 0px auto;
-    padding: 50px 0px 50px 0px;
-    border-bottom: 1px ridge;
+    padding: 20px 0px 20px 0px;
+    border-bottom: 1px;
+    border-bottom-style:inset;
     min-height: 200px;
-    color: #FFFAF0;
+    color: #FFF;
+    font-size: 18px;
 }
 
 .jumbotron {
     min-height: 300px;
-    padding: 70px 30px 70px 30px;
+    padding: 70px 10px 30px 10px;
     margin: 0px auto;
     text-align: center;
-    background: url(../img/professionals.png);
-    background-size: 1280px 700px;
-    background-repeat:no-repeat;
-    display: compact;
+    background-color: #fff;
 }
 
 .jumbotron .intro-text .name {
@@ -30,9 +29,13 @@ body {
     color: #003366;
 }
 
-.jumbotron .intro-text .skills {
+.jumbotron .intro-text .skills, .descr {
     font-weight: 500px;
-    padding: 10px;
+    font-size: 1.15em;
+    color: #208ABC;
+    font-style: oblique;
+    font-size-adjust: auto;
+    text-align: justify;
 }
 
 .navbar-inverse {
@@ -126,5 +129,17 @@ a {
     color: #fff;
 }
 
+#getStarted {
+    text-align: center;
+    color: #FFFAF0;
+}
+
+#samples {
+    text-align: center;
+}
+
+#register, #login {
+    padding-top: 20px;
+}
 
 
