@@ -20,7 +20,7 @@ var port = process.env.PORT || 8080; // set our port
 
 mongoose.connect(db.url); // connect to our mongoDB database (commented out after you enter in your own credentials)
 
-// require('./config/passport')(passport); // pass passport for configuration
+require('./config/passport')(passport); // pass passport for configuration
 
 // set up our express application
 app.use(morgan('dev')); // log every request to the console
