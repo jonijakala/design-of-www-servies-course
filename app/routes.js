@@ -5,6 +5,7 @@ module.exports = function(app) {
     //     res.sendfile('./public/index.html');
     // });
 
+
     app.use('/api', require('./apiRoutes')());
-    app.use('/', require('./angularRoutes'));
+    app.use('/', require('./angularRoutes')());
 };

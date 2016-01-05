@@ -5,15 +5,33 @@ var mongoose = require('mongoose');
 var bodyParser = require('body-parser');
 // var methodOverride = require('method-override');
 
-// configuration ===========================================
+var passport = require('passport');
+var flash    = require('connect-flash');
 
+var morgan       = require('morgan');
+var cookieParser = require('cookie-parser');
+var session      = require('express-session');
 // config files
 var db = require('./config/db');
-
 var port = process.env.PORT || 8080; // set our port
-// mongoose.connect(db.url); // connect to our mongoDB database (commented out after you enter in your own credentials)
-// mongoose.connect('mongodb://node:node@novus.modulusmongo.net:27017/Iganiq8o');
-mongoose.connect('mongodb://webres:asdf@ds037395.mongolab.com:37395/webres');
+
+// configuration ===========================================
+
+
+mongoose.connect(db.url); // connect to our mongoDB database (commented out after you enter in your own credentials)
+
+// require('./config/passport')(passport); // pass passport for configuration
+
+// set up our express application
+app.use(morgan('dev')); // log every request to the console
+app.use(cookieParser()); // read cookies (needed for auth)
+// app.use(bodyParser()); // get information from html forms
+
+// required for passport
+app.use(session({ secret: 'ilovescotchscotchyscotchscotch' })); // session secret
+app.use(passport.initialize());
+app.use(passport.session()); // persistent login sessions
+app.use(flash()); // use connect-flash for flash messages stored in session
 
 // get all data/stuff of the body (POST) parameters
 app.use(bodyParser.json()); // parse application/json 
@@ -28,9 +46,11 @@ app.use(bodyParser.urlencoded({
 app.use(express.static(__dirname + '/public')); // set the static files location /public/img will be /img for users
 
 // routes ==================================================
+require('./app/routes.js')(app, passport); // load our routes and pass in our app and fully configured passport
+
 // var router = require('./app/routes')(app);
-app.use('/api', require('./app/apiRoutes')());
-app.use('/', require('./app/angularRoutes'));
+// app.use('/api', require('./app/apiRoutes')());
+// app.use('/', require('./app/angularRoutes')());
 
 // Error Handling
 // app.use(function(err, req, res, next) {

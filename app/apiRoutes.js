@@ -6,7 +6,7 @@ module.exports = function() {
     // ROUTES FOR OUR API
     // =============================================================================
     var express = require('express');
-    var app = express;
+    // var app = express;
     var router = express.Router(); // get an instance of the express Router
 
     // CONTROLLERS
