@@ -1,4 +1,4 @@
-module.exports = function(passport) {
+module.exports = function(app, passport) {
     var express = require('express');
     var router = express.Router(); // get an instance of the express Router
 
@@ -63,7 +63,7 @@ module.exports = function(passport) {
     });
 
     // ==================================================================== TUTORIAL
-
+    return router;
 };
 
 // route middleware to make sure a user is logged in

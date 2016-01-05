@@ -15,8 +15,12 @@ module.exports = function() {
         res.sendfile('./public/index.html');
     });
 
-    router.get('/splash', function(req, res) {
-        res.sendfile('./landingPage/index.html');
+    router.get('/intro', function(req, res) {
+        res.sendfile('./public/splash.html');
+    });
+
+    router.get('/login', function(req, res) {
+        res.sendfile('./public/register_login.html');
     });
 
     return router;

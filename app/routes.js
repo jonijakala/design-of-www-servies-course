@@ -7,6 +7,6 @@ module.exports = function(app, passport) {
 
 
     app.use('/api', require('./apiRoutes')());
-    app.use('/', require('./angularRoutes')());
-    app.use('/auth', require('./authRoutes')(passport));
+    app.use('/', require('./miscRoutes')());
+    app.use('/auth', require('./authRoutes')(app, passport));
 };
