@@ -45,14 +45,14 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" id="webres" href="#page-top">&ang;WebRes</a>
+                <a class="navbar-brand" id="webres" href="index.html">&ang;WebRes</a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li class="hidden">
-                        <a href="#page-top"></a>
+                        <a href="index.html#page-top"></a>
                     </li>
                     <li><a href="#about">About</a></li>
                     <li><a href="#contact">Contact</a></li>
@@ -66,7 +66,8 @@
     
     <div class="container">
         <div class="row row-content">
-                <div class="col-sm-4 col-xs-12" id="login_register">
+                <div class="col-sm-4 col-xs-12" id="login">
+                    <p style="padding:20px;"></p>
                     <h4>Log in</h4>
                     <form class="form-horizontal" role="form">
                 <div class="form-group">
@@ -80,19 +81,18 @@
                             <div class="input-group-addon"><i class="fa fa-key"></i></div>
                     </div>
                 </div>
-                <div class="controls">
-                    <a href="/users/password/new">Forgot your password?</a>
-                    <br />
-                </div>
                 <div class="log-in">
                     <input class="btn btn-info" name="commit" type="submit" value="Login" />
-                </div> 
-            </form>
-             <a class="btn btn-inline-icon" href="/users/auth/linkedin" rel="nofollow">
-                <i class="fa fa-linkedin" ></i> Login With Linkedin </a> 
+                    <a class="btn btn-inline-icon" href="/users/auth/linkedin" rel="nofollow">
+                    Login With Linked<i class="fa fa-linkedin" ></i> </a> 
                 </div>
-            
-            <div class="col-sm-6 col-xs-12 col-sm-offset-1">
+                <div class="controls">
+                    <a href="/users/password/new">Forgot your password?</a>
+                </div>
+            </form>
+            </div>        
+            <div class="col-sm-6 col-xs-12 col-sm-offset-1" id="register">
+                <p style="padding:20px;"></p>
                	<h4>Register</h4>
                 <form class="form-horizontal" role="form">
                 <div class="form-group">
@@ -112,7 +112,7 @@
                     </div>
                     <p style="padding=10px;"></p>
                 <div class="register">
-                    <input class="btn btn-info" name="commit" type="submit" value="register" />
+                    <input class="btn btn-info" name="commit" type="submit" value="Register" />
                 </div> 
             </form>
                 </div>
@@ -127,12 +127,12 @@
             <div class="container">
                 <div class="row">
                     <div class="footer-col col-xs-12 col-md-6">
-                        <h3>Get to know us more</h3>
+                        <h3 id="about">Get to know us more</h3>
                         <p>WebRes is a web project undertaken by 3 students Chris, Joni and Michael as part of the WWW Design Course at Aalto University, Computer Science Department.</p>
                     </div>
                     
                     <div class="footer-col col-xs-12 col-md-4 col-md-offset-1">
-                        <h3>Connect with Us</h3>
+                        <h3 id="contact">Connect with Us</h3>
                         <ul class="list-inline">
                             <li>
                                 <a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-facebook"></i></a>
