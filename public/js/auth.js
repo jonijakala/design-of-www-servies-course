@@ -33,7 +33,7 @@ function loginForm() {
 
 function ajaxSuccess(results) {
     if (results.message == 'success') {
-        window.location.replace("/profile");
+        window.location.replace(results.url);
     }
     $('#log-message').text(results.message).show(400);
 }

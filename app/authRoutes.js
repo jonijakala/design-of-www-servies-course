@@ -70,7 +70,8 @@ module.exports = function(app, passport) {
 
     router.get('/signup-succee', function(req, res) {
         res.json({
-            message: 'success'
+            message: 'success',
+            url: '/'
         });
     });
 
