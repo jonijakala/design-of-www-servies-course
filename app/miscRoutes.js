@@ -11,7 +11,7 @@ module.exports = function() {
 
     // test route to make sure everything is working (accessed at GET http://localhost:8080/api)
 
-    router.get('/kissa', function(req, res) {
+    router.get('/profile', isLoggedIn, function(req, res) {
         res.sendfile('./public/index.html');
     });
 
@@ -25,3 +25,14 @@ module.exports = function() {
 
     return router;
 };
+
+// route middleware to make sure a user is logged in
+function isLoggedIn(req, res, next) {
+
+    // if user is authenticated in the session, carry on 
+    if (req.isAuthenticated())
+        return next();
+
+    // if they aren't redirect them to the home page
+    res.redirect('/login');
+}
