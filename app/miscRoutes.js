@@ -52,7 +52,6 @@ function isLoggedIn(req, res, next) {
         // console.log(req.user);
         return next();
     }
-
     // if they aren't redirect them to the home page
     res.redirect('/login');
 }
