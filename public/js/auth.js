@@ -1,17 +1,6 @@
-$(document).ready(function() {
-
-});
+// $(document).ready(function() { });
 
 function registerForm() {
-    // e.preventDefault();
-
-    // var email = $('input#user_email').val();
-    // var password = $('input#user_password').val();
-    // var formdata = 'asdf';
-    // formData = 'email=' + email + '&password=' + password;
-    // console.log('formdata: ' + formdata);
-    // console.log($('#register > form').serialize());
-
     $.ajax({
         type: 'post',
         url: '/auth/signup',
@@ -34,6 +23,7 @@ function loginForm() {
 function ajaxSuccess(results) {
     if (results.message == 'success') {
         window.location.replace(results.url);
+    } else {
+        $('#log-message').text(results.message).show(400);
     }
-    $('#log-message').text(results.message).show(400);
 }
