@@ -1,10 +1,4 @@
 /**
- * importer.sass
- *
- * By default, new Sails projects are configured to compile this file
- * from SASS to CSS.  Unlike CSS files, SASS files are not compiled and
- * included automatically unless they are imported below.
- *
  * The SASS files imported below are compiled and included in the order
  * they are listed.  Mixins, variables, etc. should be imported first
  * so that they can be accessed by subsequent SASS stylesheets.
@@ -12,8 +6,10 @@
  */
 
 @import 'customVariables';
-@import 'bootstrap';
-@import 'bootstrap/theme';
+// @import 'bootstrap';
+@import '../libs/bootstrap-sass/assets/stylesheets/bootstrap';
+// @import '../bootstrap-sass/assets/stylesheets/bootstrap/bootstrap';
+// @import 'bootstrap/theme';
 @import 'styles';
 
 @import url(https://fonts.googleapis.com/css?family=Quicksand);
