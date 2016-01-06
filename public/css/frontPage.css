@@ -142,4 +142,11 @@ a {
     padding-top: 20px;
 }
 
+.temp-hidden {
+    margin: 10px 0;
+    display: none;
+    /*font-size: 14px;*/
+    
+}
+
 

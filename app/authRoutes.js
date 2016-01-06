@@ -23,11 +23,20 @@ module.exports = function(app, passport) {
     // });
 
     // process the login form
-    app.post('/login', passport.authenticate('local-login', {
-        successRedirect: '/profile', // redirect to the secure profile section
-        failureRedirect: '/login', // redirect back to the signup page if there is an error
+    // app.post('/login', passport.authenticate('local-login', {
+    router.post('/login', passport.authenticate('local-login', {
+        // successRedirect: '/profile', // redirect to the secure profile section
+        successRedirect: '/auth/signup-succee', // redirect to the secure profile section
+        // failureRedirect: '/login', // redirect back to the signup page if there is an error
+        failureRedirect: '/auth/login-error-json', // redirect back to the signup page if there is an error
         failureFlash: true // allow flash messages
     }));
+
+    router.get('/login-error-json', function(req, res) {
+        res.json({
+            message: req.flash('loginMessage')
+        });
+    });
 
     // =====================================
     // SIGNUP ==============================
@@ -41,27 +50,47 @@ module.exports = function(app, passport) {
     // });
 
     // process the signup form
-    app.post('/signup', passport.authenticate('local-signup', {
-        successRedirect: '/profile', // redirect to the secure profile section
-        failureRedirect: '/signup', // redirect back to the signup page if there is an error
+    // app.post('/signup', passport.authenticate('local-signup', {
+    router.post('/signup', passport.authenticate('local-signup', {
+        successRedirect: '/auth/signup-succee', // redirect to the secure profile section
+        // successRedirect: '/profile', // redirect to the secure profile section
+        // failureRedirect: '/signup', // redirect back to the signup page if there is an error
+        failureRedirect: '/auth/signup-error-json', // redirect back to the signup page if there is an error
         failureFlash: true // allow flash messages
     }));
+
+    // router.route('/signup-error-json') 
+    router.get('/signup-error-json', function(req, res) {
+        // .get(function(req, res) {
+        res.json({
+            message: req.flash('signupMessage')
+        });
+        // res.json(req);
+    });
+
+    router.get('/signup-succee', function(req, res) {
+        res.json({
+            message: 'success'
+        });
+    });
 
     // =====================================
     // PROFILE SECTION =====================
     // =====================================
     // we will want this protected so you have to be logged in to visit
     // we will use route middleware to verify this (the isLoggedIn function)
-    app.get('/profile', isLoggedIn, function(req, res) {
-        res.render('profile.ejs', {
-            user: req.user // get the user out of session and pass to template
-        });
-    });
+    // app.get('/profile', isLoggedIn, function(req, res) {
+    // router.get('/profile', isLoggedIn, function(req, res) {
+    //     res.render('profile.ejs', {
+    //         user: req.user // get the user out of session and pass to template
+    //     });
+    // });
 
     // =====================================
     // LOGOUT ==============================
     // =====================================
-    app.get('/logout', function(req, res) {
+    // app.get('/logout', function(req, res) {
+    router.get('/logout', function(req, res) {
         req.logout();
         res.redirect('/');
     });

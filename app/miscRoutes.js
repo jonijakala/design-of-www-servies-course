@@ -12,6 +12,7 @@ module.exports = function() {
     // test route to make sure everything is working (accessed at GET http://localhost:8080/api)
 
     router.get('/profile', isLoggedIn, function(req, res) {
+        console.log(res.user);
         res.sendfile('./public/index.html');
     });
 
