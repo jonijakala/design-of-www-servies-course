@@ -25,7 +25,9 @@ app.use(cookieParser()); // read cookies (needed for auth)
 
 // required for passport
 app.use(session({
-    secret: 'ChrisCodedEverything'
+    secret: 'ChrisCodedEverything',
+    resave: true,
+    saveUninitialized: true
 })); // session secret
 app.use(passport.initialize());
 app.use(passport.session()); // persistent login sessions
