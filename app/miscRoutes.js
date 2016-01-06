@@ -11,9 +11,22 @@ module.exports = function() {
 
     // test route to make sure everything is working (accessed at GET http://localhost:8080/api)
 
+    router.get('/', function(req, res) {
+        console.log("äåååpppäää");
+        if (req.user) {
+            res.redirect("/user/" + req.user._id);
+        }
+        res.sendfile('./public/splash.html');
+    });
+
+    router.get('/user/:uid', isLoggedIn, function(req, res) {
+        console.log(req.user); // undefined
+        res.sendfile('./public/main.html');
+    });
+
     router.get('/profile', isLoggedIn, function(req, res) {
-        console.log(res.user);
-        res.sendfile('./public/index.html');
+        // console.log(res.user);
+        res.sendfile('./public/main.html');
     });
 
     router.get('/intro', function(req, res) {
@@ -31,8 +44,14 @@ module.exports = function() {
 function isLoggedIn(req, res, next) {
 
     // if user is authenticated in the session, carry on 
-    if (req.isAuthenticated())
+    if (req.isAuthenticated()) {
+        console.log('isloggedin');
+        // console.log('========REQ=========');
+        // console.log(req);
+        // console.log('========REQ.USER=========');
+        // console.log(req.user);
         return next();
+    }
 
     // if they aren't redirect them to the home page
     res.redirect('/login');
