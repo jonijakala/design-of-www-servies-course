@@ -26,6 +26,11 @@ var userSchema = mongoose.Schema({
         token        : String,
         email        : String,
         name         : String
+    },
+    userinfo : {
+        name : String,
+        position : String,
+        infoModuleCollection: { type: Schema.Types.ObjectId, ref: 'InfoModule' }
     }
 });
 
