@@ -1,7 +1,7 @@
 {
-  "name": "starter-node-angular",
+  "name": "WebRes",
   "main": "server.js",
-  "scripts": { "start": "gulp server:start" },
+  "scripts": { "start": "node server.js" },
   "dependencies": {
     "body-parser": "~1.4.2",
     "connect-flash": "^0.1.1",
@@ -13,6 +13,6 @@
     "gulp-sass": "^2.1.1",
     "mongoose": "~3.8.0",
     "morgan": "^1.6.1",
-    "passport": "^0.3.2"
+    "passport": "^0.3.2",
   }
 }
