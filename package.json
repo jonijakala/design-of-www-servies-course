@@ -2,11 +2,13 @@
   "name": "WebRes",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "postinstall": "bash ./post_install.sh"
   },
   "dependencies": {
     "bcrypt-nodejs": "0.0.3",
     "body-parser": "~1.4.2",
+    "bower": "^1.7.2",
     "connect-flash": "^0.1.1",
     "cookie-parser": "^1.4.0",
     "express": "~4.5.1",
