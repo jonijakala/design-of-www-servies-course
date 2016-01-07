@@ -14,7 +14,7 @@ module.exports = function() {
     router.get('/', function(req, res) {
         console.log("äåååpppäää");
         if (req.user) {
-            res.redirect("/user/" + req.user._id);
+            res.redirect("/user/" + req.user._id + '/');
         }
         res.sendfile('./public/splash.html');
     });
@@ -24,10 +24,10 @@ module.exports = function() {
         res.sendfile('./public/main.html');
     });
 
-    router.get('/profile', isLoggedIn, function(req, res) {
-        // console.log(res.user);
-        res.sendfile('./public/main.html');
-    });
+    // router.get('/profile', isLoggedIn, function(req, res) {
+    //     // console.log(res.user);
+    //     res.sendfile('./public/main.html');
+    // });
 
     router.get('/intro', function(req, res) {
         res.sendfile('./public/splash.html');
