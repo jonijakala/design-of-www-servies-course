@@ -7,13 +7,21 @@
         </div>
     </div>
     <div class="navi">
-        <div class="view-current"><a ui-sref=".profile">CV</a></div>
-        <div class="view-tab"><a ui-sref=".portfolio">PORTFOLIO</a></div>
-        <div class="view-tab"><a ui-sref=".contact">CONTACT</a></div>
+        <div id="profilelink" class="view-tab" ng-click="main.activate('profile')" ui-sref=".profile" ui-sref-active="activeview">
+            CV
+        </div>
+        
+        <div id="portfoliolink" class="view-tab" ng-click="main.activate('portfolio')" ui-sref=".portfolio" ui-sref-active="activeview">
+            PORTFOLIO
+        </div>
+        
+        <div id="contactlink" class="view-tab" ng-click="main.activate('contact')" ui-sref=".contact" ui-sref-active="activeview">
+            CONTACT
+        </div>
+        
     </div>
     <!-- <div class="content" ng-app="webresApp"> -->
     <div class="content" ui-view>
-
         <!-- <button type="submit" class="btn btn-primary btn-lg" ng-click="addModule()">Add Module</button> -->
         
 
