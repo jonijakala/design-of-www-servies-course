@@ -7,6 +7,7 @@
         'appRoutes',
         'ProfileCtrl',
         'MainCtrl',
+        'ContactCtrl'
         // 'NerdCtrl',
         // 'NerdService',
         // 'GeekCtrl',

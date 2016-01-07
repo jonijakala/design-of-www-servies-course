@@ -47,6 +47,12 @@
                 controller: 'ProfileController',
                 controllerAs: 'vm'
             })
+            .state('main.contact', {
+                url: '/contact',
+                templateUrl: 'app/contact/contact.html',
+                controller: 'ContactController',
+                controllerAs: 'vm'
+            })
             .state('material', {
                 url: '/material',
                 templateUrl: 'app/material/material.html',
