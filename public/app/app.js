@@ -6,6 +6,7 @@
         'ui.router',
         'appRoutes',
         'ProfileCtrl',
+        'PortfolioCtrl',
         'MainCtrl',
         'ContactCtrl'
         // 'NerdCtrl',

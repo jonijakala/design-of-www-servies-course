@@ -47,6 +47,12 @@
                 controller: 'ProfileController',
                 controllerAs: 'vm'
             })
+            .state('main.portfolio', {
+                url: '/portfolio',
+                templateUrl: 'app/portfolio/portfolio.html',
+                controller: 'PortfolioController',
+                controllerAs: 'vm'
+            })
             .state('main.contact', {
                 url: '/contact',
                 templateUrl: 'app/contact/contact.html',
