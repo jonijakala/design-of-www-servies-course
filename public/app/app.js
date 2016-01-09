@@ -8,6 +8,7 @@
         'ProfileCtrl',
         'PortfolioCtrl',
         'MainCtrl',
+        // 'MainService',
         'ContactCtrl'
         // 'NerdCtrl',
         // 'NerdService',

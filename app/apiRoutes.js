@@ -12,12 +12,12 @@ module.exports = function() {
     // CONTROLLERS
     var Bear = require('./models/bear');
     var User = require('./models/user');
-    // var controller = require( 'path-to-your-controllers/invoice-controller' );
+    var InfoModule = require('./models/infomodule');
 
     // middleware to use for all requests
     router.use(function(req, res, next) {
         // do logging
-        console.log('Something is happening. ApiRoutes');
+        // console.log('Something is happening. ApiRoutes');
         next(); // make sure we go to the next routes and don't stop here
     });
 
@@ -92,11 +92,42 @@ module.exports = function() {
 
     router.route('/user/:user_id')
         .get(function(req, res) {
+            console.log("superASDFASDFASDF");
             User.findById(req.params.user_id, function(err, user) {
                 if (err)
                     res.send(err);
                 res.json(user);
             });
+        });
+
+    router.route('/user/')
+        .get(function(req, res) {
+            res.json(req.user);
+        });
+
+    router.route('/user/infoModule')
+        .post(function(req, res) {
+            console.log('Lets create new infoModule!');
+            var infmodul = new InfoModule();
+
+            // template infoset
+            var infoset = new InfoSet();
+            infoset.title = 'TestingTitle';
+
+            infmodul.title = 'Childhood';
+            infmodul.infosets = [infoset];
+
+            res.json(infmodul);
+
+            // var bear = new Bear(); // create a new instance of the Bear model
+            // bear.name = req.body.name; // set the bears name (comes from the request)            // save the bear and check for errors
+            // bear.save(function(err) {
+            //     if (err)
+            //         res.send(err);
+            //     res.json({
+            //         message: 'Bear created!'
+            //     });
+            // });
         });
 
     return router;
