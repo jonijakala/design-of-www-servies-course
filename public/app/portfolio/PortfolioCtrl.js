@@ -7,8 +7,8 @@
 
     function PortfolioController(MainCtrlService) {
         var vm = this;
-        console.log(MainCtrlService.asdf);
-        vm.userData = MainCtrlService.asdf;
+        console.log(MainCtrlService.userData);
+        vm.userData = MainCtrlService.userData;
         vm.asdf = "superASdfasdfasdfasdf";
         // var main = MainCtrl;
         // this.tagline = 'To the moon and back!';
