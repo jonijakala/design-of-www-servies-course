@@ -13,6 +13,7 @@ module.exports = function() {
     var Bear = require('./models/bear');
     var User = require('./models/user');
     var InfoModule = require('./models/infomodule');
+    var InfoSet = require('./models/infoset');
 
     // middleware to use for all requests
     router.use(function(req, res, next) {

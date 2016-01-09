@@ -30,7 +30,8 @@ var userSchema = mongoose.Schema({
     userinfo : {
         name : String,
         position : String,
-        infoModuleCollection: { type: mongoose.Schema.Types.ObjectId, ref: 'InfoModule' }
+        infoModules: [mongoose.model('InfoModule').schema]
+        // infoModuleCollection: { type: mongoose.Schema.Types.ObjectId, ref: 'InfoModule' }
     }
 });
 
