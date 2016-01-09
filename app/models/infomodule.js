@@ -28,4 +28,4 @@ pairs -> [ [pair1_a, pair1_b], [pair2_a, pair2_b] ]
  */
 
 module.exports = mongoose.model('InfoModule', infoModuleSchema);
-module.exports = mongoose.model('InfoSet', infoSetSchema);
+// module.exports = mongoose.model('InfoSet', infoSetSchema);

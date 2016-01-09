@@ -92,7 +92,7 @@ module.exports = function() {
 
     router.route('/user/:user_id')
         .get(function(req, res) {
-            console.log("superASDFASDFASDF");
+            console.log(req.user_id);
             User.findById(req.params.user_id, function(err, user) {
                 if (err)
                     res.send(err);
@@ -107,17 +107,72 @@ module.exports = function() {
 
     router.route('/user/infoModule')
         .post(function(req, res) {
-            console.log('Lets create new infoModule!');
-            var infmodul = new InfoModule();
 
-            // template infoset
-            var infoset = new InfoSet();
-            infoset.title = 'TestingTitle';
+            var action = function() {
+                console.log('req.user');
+                console.log(req.user);
+                console.log('Lets create new infoModule!');
+                var infmodul = new InfoModule();
 
-            infmodul.title = 'Childhood';
-            infmodul.infosets = [infoset];
+                // template infoset
+                var infoset = {
+                    title: 'FAUX designers Oy',
+                    startYear: 2008,
+                    endYear: 2010,
+                    infoSnips: [{
+                        type: 'paragraph',
+                        content: 'Photoshop designer and MS paint expert.'
+                    }]
+                };
+                var infoset2 = {
+                    title: 'Strawberry EATS',
+                    startYear: 2007,
+                    startMonth: 6,
+                    endYear: 2007,
+                    endMonth: 9,
+                    infoSnips: [{
+                        type: 'paragraph',
+                        content: 'Summer job at strawberry farm. Much nice red strawberry yummy. <3'
+                    }]
+                };
 
-            res.json(infmodul);
+                infmodul.title = 'BESTEST WORK EXP';
+                infmodul.infosets = [infoset, infoset2];
+
+                //saves
+                infmodul.save(function(err) {
+                    if (err)
+                        res.send(err);
+                });
+
+                req.user.userinfo.infoModules.push(infmodul);
+                req.user.save(function(err) {
+                    if (err)
+                        res.send(err);
+                    res.json({
+                        message: 'Created new Module!',
+                        infomodule: infmodul,
+                        user: req.user
+                    });
+                });
+            };
+
+            //iff no req.user
+            if (!req.user) {
+                console.log(req.body);
+                User.findById(req.body.user_id, function(err, user) {
+                    if (err)
+                        res.send(err);
+                    console.log("user inside if:");
+                    console.log(user);
+                    req.user = user;
+                    action();
+                });
+            } else 
+                action();
+
+
+            // res.json(infmodul);
 
             // var bear = new Bear(); // create a new instance of the Bear model
             // bear.name = req.body.name; // set the bears name (comes from the request)            // save the bear and check for errors
