@@ -13,6 +13,16 @@
                     defer.reject(err);
                 });
                 return defer.promise;
+            },
+            'addDummyDataInfModule': function() {
+                var defer = $q.defer();
+                $http.post('/api/user/infoModule').success(function(resp) {
+                    defer.resolve(resp);
+                }).error(function(err) {
+                    defer.reject(err);
+                });
+                return defer.promise;
+
             }
             // 'getModules': function() {
             //     var defer = $q.defer();
