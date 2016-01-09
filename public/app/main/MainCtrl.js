@@ -2,7 +2,7 @@
     'use strict';
     
     angular
-        .module('MainCtrl', [])
+        .module('MainModule')
         .controller('MainController', ['MainService', MainController]);
 
     function MainController(MainService) {

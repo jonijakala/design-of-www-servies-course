@@ -2,7 +2,7 @@
     'use strict';
     
     angular
-        .module('PortfolioCtrl', [])
+        .module('MainModule')
         .controller('PortfolioController', ['MainCtrl', PortfolioController]);
 
     function PortfolioController(MainCtrl) {

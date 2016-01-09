@@ -1,6 +1,6 @@
 (function() {
     angular
-        .module('MainCtrl')
+        .module('MainModule')
         .factory('MainService', ['$http', '$q', MainService]);
 
     function MainService($http, $q) {

@@ -2,12 +2,12 @@
     'use strict';
 
     angular
-    .module('ProfileCtrl', [])
-    .controller('ProfileController', ['$rootScope', ProfileController]);
+    .module('MainModule')
+    .controller('ProfileController', [ProfileController]);
     // .controller('ProfileController', ['$rootScope', 'CvService', ProfileController]);
 
     // function ProfileController($rootScope, CvService) {
-    function ProfileController($rootScope) {
+    function ProfileController() {
         var vm = this;
         vm.asdfData = {};
         vm.modules = [];
