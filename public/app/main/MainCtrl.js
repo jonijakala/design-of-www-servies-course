@@ -3,12 +3,12 @@
     
     angular
         .module('MainModule')
-        .controller('MainController', ['MainService', MainController]);
+        .controller('MainController', ['MainApiService', 'MainCtrlService', MainController]);
 
-    function MainController(MainService) {
-    //     .controller('MainController', ['MainService', MainController]);
+    function MainController(MainApiService, MainCtrlService) {
+    //     .controller('MainController', ['MainApiService', MainController]);
 
-    // function MainController(MainService) {
+    // function MainController(MainApiService) {
         var vm = this;
         vm.userData = null;
         vm.active = 'profile';
@@ -18,15 +18,15 @@
         };
 
         vm.getData = function() {
-            MainService.getUserData().then(function(response) {
+            MainApiService.getUserData().then(function(response) {
                 console.log('asdf. Service funkkar! responssi:');
                 console.log(response);
             });
         };
 
         vm.initiateDummyModuls = function() {
-            MainService.addDummyDataInfModule().then(function(response) {
-                vm.userData = response.user;
+            MainApiService.addDummyDataInfModule().then(function(response) {
+                MainCtrlService.userData = response.user;
             }, function(err) {
                 if (err)
                     console.log(err);

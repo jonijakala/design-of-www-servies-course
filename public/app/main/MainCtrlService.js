@@ -1,29 +1,12 @@
 (function() {
     angular
         .module('MainModule')
-        .factory('MainService', ['$http', '$q', MainService]);
+        .factory('MainCtrlService', [MainCtrlService]);
 
-    function MainService($http, $q) {
+    function MainCtrlService() {
         return {
-            'getUserData': function() {
-                var defer = $q.defer();
-                $http.get('/api/user/').success(function(resp) {
-                    defer.resolve(resp);
-                }).error(function(err) {
-                    defer.reject(err);
-                });
-                return defer.promise;
-            },
-            'addDummyDataInfModule': function() {
-                var defer = $q.defer();
-                $http.post('/api/user/infoModule').success(function(resp) {
-                    defer.resolve(resp);
-                }).error(function(err) {
-                    defer.reject(err);
-                });
-                return defer.promise;
-
-            }
+            'userData': null,
+            'asdf': "MainGtrlService ASDFASDFASF"
             // 'getModules': function() {
             //     var defer = $q.defer();
             //     $http.get('/modules/getModules').success(function(resp) {
