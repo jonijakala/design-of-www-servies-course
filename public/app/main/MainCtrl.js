@@ -25,6 +25,7 @@
                 console.log('response.userinfo');
                 console.log(response.userinfo);
                 MainCtrlService.userData = response.userinfo;
+                // vm.$apply();
             });
         };
 

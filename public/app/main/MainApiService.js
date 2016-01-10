@@ -1,9 +1,9 @@
 (function() {
     angular
         .module('MainModule')
-        .factory('MainApiService', ['$http', '$q', MainApiService]);
+        .factory('MainApiService', ['$rootScope', '$http', '$q', MainApiService]);
 
-    function MainApiService($http, $q) {
+    function MainApiService($rootScope, $http, $q) {
         return {
             'getUserData': function() {
                 var defer = $q.defer();

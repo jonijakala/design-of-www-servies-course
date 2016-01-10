@@ -3,12 +3,20 @@
 
     angular
     .module('MainModule')
-    .controller('ProfileController', [ProfileController]);
+    .controller('ProfileController', ['$scope', 'MainCtrlService',ProfileController]);
     // .controller('ProfileController', ['$rootScope', 'CvService', ProfileController]);
 
     // function ProfileController($rootScope, CvService) {
-    function ProfileController() {
+    function ProfileController($scope, MainCtrlService) {
         var vm = this;
+        vm.userData = MainCtrlService.userData;
+
+        vm.update = function() {
+                vm.userData = MainCtrlService.userData;
+            // $scope.$apply(function() {
+            // });
+        };
+
         vm.asdfData = {};
         vm.modules = [];
         vm.modul1 = {
@@ -90,6 +98,7 @@
         //      vm.todos.splice(vm.todos.indexOf(todo), 1);
         //    });
         //  };
+        return vm;
     }
 
     // webresApp
