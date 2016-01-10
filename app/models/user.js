@@ -1,6 +1,7 @@
 // load the things we need
 var mongoose = require('mongoose');
 var bcrypt   = require('bcrypt-nodejs');
+var InfoModule = require('./infomodule');
 
 // define the schema for our user model
 var userSchema = mongoose.Schema({
@@ -30,7 +31,8 @@ var userSchema = mongoose.Schema({
     userinfo : {
         name : String,
         position : String,
-        infoModuleCollection: { type: mongoose.Schema.Types.ObjectId, ref: 'InfoModule' }
+        infoModules: [InfoModule.schema]
+        // infoModuleCollection: [{ type: mongoose.Schema.Types.ObjectId, ref: 'InfoModule' }]
     }
 });
 

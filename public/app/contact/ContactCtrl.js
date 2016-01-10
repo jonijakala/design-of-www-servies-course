@@ -2,7 +2,7 @@
     'use strict';
     
     angular
-        .module('ContactCtrl', [])
+        .module('MainModule')
         .controller('ContactController', ContactController);
 
     function ContactController() {

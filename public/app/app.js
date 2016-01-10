@@ -5,10 +5,11 @@
         // 'ngRoute',
         'ui.router',
         'appRoutes',
-        'ProfileCtrl',
-        'PortfolioCtrl',
-        'MainCtrl',
-        'ContactCtrl'
+        // 'ProfileCtrl',
+        // 'PortfolioCtrl',
+        'MainModule',
+        // 'MainService',
+        // 'ContactCtrl'
         // 'NerdCtrl',
         // 'NerdService',
     ]);

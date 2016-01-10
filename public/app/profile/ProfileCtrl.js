@@ -2,13 +2,30 @@
     'use strict';
 
     angular
-    .module('ProfileCtrl', [])
-    .controller('ProfileController', ['$rootScope', ProfileController]);
+    .module('MainModule')
+    .controller('ProfileController', ['$scope', '$timeout', 'MainCtrlService', 'MainApiService', ProfileController]);
     // .controller('ProfileController', ['$rootScope', 'CvService', ProfileController]);
 
     // function ProfileController($rootScope, CvService) {
-    function ProfileController($rootScope) {
+    function ProfileController($scope, $timeout, MainCtrlService, MainApiService) {
         var vm = this;
+        vm.CtrlData = MainCtrlService.data;
+        // vm.edit = MainCtrlService.data;
+        
+        vm.initSampleModules = function() {
+            MainApiService.addDummyDataInModule().then(function(response) {
+                console.log('dummydata');
+                console.log(response);
+                MainCtrlService.data.user = response.user.userinfo;
+            }, function(err) {
+                console.log(err);
+            });
+        };
+
+        // $timeout(function() {
+        //     vm.update();
+        // }, 200);
+
         vm.asdfData = {};
         vm.modules = [];
         vm.modul1 = {
@@ -61,12 +78,13 @@
 
         vm.editMode = function() {
             var edits = document.getElementsByClassName("edit");
-            var bool = (!edits[0].getAttribute("contenteditable"));
+            var bool = (!vm.CtrlData.edit);
             console.log(bool);
             for (var i = 0; i < edits.length; i++) {
                 console.log('Log edits: ' + edits[i]);
                 edits[i].setAttribute("contenteditable", bool.toString());
             }
+            console.log(vm.CtrlData.user);
             // console.log('Log edits: ' + edits[0]);
             // edits[0].
         };
@@ -90,6 +108,7 @@
         //      vm.todos.splice(vm.todos.indexOf(todo), 1);
         //    });
         //  };
+        return vm;
     }
 
     // webresApp

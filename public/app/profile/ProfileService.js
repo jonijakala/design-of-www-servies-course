@@ -1,6 +1,6 @@
 (function() {
     angular
-        .module('ProfileService', [])
+        .module('MainModule')
         .factory('Profile', ['$http', '$q', ProfileService]);
 
     function ProfileService($http, $q) {
