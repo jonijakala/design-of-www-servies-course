@@ -14,7 +14,7 @@ module.exports = function() {
     router.get('/', function(req, res) {
         console.log("äåååpppäää");
         if (req.user) {
-            res.redirect("/user/" + req.user._id + '/');
+            res.redirect("/user/" + req.user._id + '/#/profile');
         }
         res.sendfile('./public/splash.html');
     });
