@@ -3,36 +3,56 @@
 
     angular
         .module('MainModule')
-        .directive('InfoModule', InfoModule)
-        .directive('InfoSet', InfoSet);
+        .directive('contenteditable', ContentEditable);
 
-    function InfoModule() {
+    function ContentEditable() {
         return {
-            restrict: 'E',
-            scope: {
-                module: '=module',
-                extRemove: '&removeModule'
-                    // title: '@module.title'
-            },
-            templateUrl: 'templates/infoModule2.html',
-            link: function(scope, element, attrs) {
+            restrict: "A",
+            require: "ngModel",
+            link: function(scope, element, attrs, ngModel) {
 
-                scope.remove = function(module) {
-                    removeModule(module);
+                function read() {
+                    ngModel.$setViewValue(element.html());
+                }
+
+                ngModel.$render = function() {
+                    element.html(ngModel.$viewValue || "asdf5");
                 };
-            },
+
+                element.on("blur keyup change", function() {
+                    scope.$apply(read());
+                });
+            }
         };
     }
 
-    function InfoSet() {
-        return {
-            restrict: 'E',
-            scope: {
-                infomodule: '=infoset',
-            },
-            templateUrl: 'templates/infoSet.html',
-        };
-    }
+    // function InfoModule() {
+    //     return {
+    //         restrict: 'E',
+    //         scope: {
+    //             module: '=module',
+    //             extRemove: '&removeModule'
+    //                 // title: '@module.title'
+    //         },
+    //         templateUrl: 'templates/infoModule2.html',
+    //         link: function(scope, element, attrs) {
+
+    //             scope.remove = function(module) {
+    //                 removeModule(module);
+    //             };
+    //         },
+    //     };
+    // }
+
+    // function InfoSet() {
+    //     return {
+    //         restrict: 'E',
+    //         scope: {
+    //             infomodule: '=infoset',
+    //         },
+    //         templateUrl: 'templates/infoSet.html',
+    //     };
+    // }
 
 
 })();

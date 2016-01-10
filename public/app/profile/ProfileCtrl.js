@@ -10,6 +10,7 @@
     function ProfileController($scope, $timeout, MainCtrlService, MainApiService) {
         var vm = this;
         vm.CtrlData = MainCtrlService.data;
+        vm.asdf3 = 'Tää o asdf kolomone3';
         // vm.edit = MainCtrlService.data;
         
         vm.initSampleModules = function() {
@@ -20,6 +21,14 @@
             }, function(err) {
                 console.log(err);
             });
+        };
+
+        vm.saveUser = function() {
+            console.log('todo: saveuser!');
+        };
+
+        vm.logUser = function() {
+            console.log(vm.CtrlData.user);
         };
 
         // $timeout(function() {

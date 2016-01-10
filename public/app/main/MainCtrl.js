@@ -21,12 +21,9 @@
 
         vm.getData = function() {
             MainApiService.getUserData().then(function(response) {
-                console.log('asdf. Service funkkar! responssi:');
-                console.log('response.userinfo');
                 console.log(response.userinfo);
                 $timeout(function() {
                     MainCtrlService.updateUserData(response.userinfo);
-                    console.log('asdf');
                 });
                 // vm.$apply();
             });

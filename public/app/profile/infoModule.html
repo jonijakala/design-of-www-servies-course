@@ -1,9 +1,10 @@
 <div ng-repeat="infomodule in vm.CtrlData.user.infoModules" class="module info">
     <div class="module-header">
-        <span class="module-title edit">{{infomodule.title}}</span>
+        <span class="module-title edit" contenteditable ng-model="infomodule.title"></span>
+        <!-- <span class="module-title edit" contenteditable ng-model="infomodule.title">{{infomodule.title}}</span> -->
     </div>
 <!-- TEST -->
-    <!-- <h1 ng-model=""></h1> -->
+    <p ng-click="console.log(vm.CtrlData.user);">{{infomodule.title}}</p>
     <div ng-repeat="infoset in infomodule.infosets" class="infoset">
         <div class="infoset-left">
             <div class="infoset-end edit">{{infoset.endYear}}<span ng-show="infoset.endMonth">/{{infoset.endMonth}}</span>
@@ -31,9 +32,11 @@
 <div class="buttonrow" ng-show="vm.CtrlData.user.infoModules.length < 1">
 <button type="submit" class="test btn btn-primary btn-sm" ng-click="vm.initSampleModules()">Init modeldata!!</button>
 </div>
-<div class="buttonrow" ng-show="v.CtrlData.edit" id="testrow">
+<div class="buttonrow" id="testrow">
+<!-- <div class="buttonrow" ng-show="v.CtrlData.edit" id="testrow"> -->
     <!-- <button type="submit" class="test btn btn-primary btn-sm" ng-click="vm.update()">$apply</button> -->
-    <button type="submit" class="test btn btn-primary btn-sm" ng-click="addModule()">Add Module</button>
+    <button type="submit" class="test btn btn-primary btn-sm" ng-click="vm.saveUser()">Save Changes</button>
+    <button type="submit" class="test btn btn-primary btn-sm" ng-click="vm.logUser()">logUser</button>
     <!-- <button type="submit" class="test btn btn-primary btn-sm" ng-click="removeModule()">Remove Module</button> -->
     <!-- <button type="submit" class="btn btn-primary btn-sm" ng-click="addInfoSet()">Add InfoSet</button> -->
     <!-- <button type="submit" class="test btn btn-primary btn-sm" ng-click="editMode()">Activate edit mode</button> -->
