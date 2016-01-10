@@ -1,13 +1,14 @@
 (function() {
     angular
         .module('MainModule')
-        .factory('MainApiService', ['$rootScope', '$http', '$q', MainApiService]);
+        .factory('MainApiService', ['MainCtrlService', '$rootScope', '$http', '$q', MainApiService]);
 
-    function MainApiService($rootScope, $http, $q) {
+    function MainApiService(MainCtrlService, $rootScope, $http, $q) {
         return {
             'getUserData': function() {
                 var defer = $q.defer();
                 $http.get('/api/user/').success(function(resp) {
+                    // MainCtrlService.userData = resp.userinfo;
                     defer.resolve(resp);
                 }).error(function(err) {
                     defer.reject(err);

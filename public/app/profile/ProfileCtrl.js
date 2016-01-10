@@ -3,19 +3,25 @@
 
     angular
     .module('MainModule')
-    .controller('ProfileController', ['$scope', 'MainCtrlService',ProfileController]);
+    .controller('ProfileController', ['$scope', '$timeout', 'MainCtrlService',ProfileController]);
     // .controller('ProfileController', ['$rootScope', 'CvService', ProfileController]);
 
     // function ProfileController($rootScope, CvService) {
-    function ProfileController($scope, MainCtrlService) {
+    function ProfileController($scope, $timeout, MainCtrlService) {
         var vm = this;
-        vm.userData = MainCtrlService.userData;
+        vm.userData = MainCtrlService.data;
+        
 
         vm.update = function() {
-                vm.userData = MainCtrlService.userData;
+        vm.userData = MainCtrlService.data.user;
+                // vm.userData = MainCtrlService.userData;
             // $scope.$apply(function() {
             // });
         };
+
+        // $timeout(function() {
+        //     vm.update();
+        // }, 200);
 
         vm.asdfData = {};
         vm.modules = [];

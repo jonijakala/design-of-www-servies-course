@@ -1,14 +1,14 @@
 (function() {
     'use strict';
-    
+
     angular
         .module('MainModule')
-        .controller('MainController', ['MainApiService', 'MainCtrlService', MainController]);
+        .controller('MainController', ['MainApiService', 'MainCtrlService', '$timeout', MainController]);
 
-    function MainController(MainApiService, MainCtrlService) {
-    //     .controller('MainController', ['MainApiService', MainController]);
+    function MainController(MainApiService, MainCtrlService, $timeout) {
+        //     .controller('MainController', ['MainApiService', MainController]);
 
-    // function MainController(MainApiService) {
+        // function MainController(MainApiService) {
         var vm = this;
         vm.userData = null;
         vm.active = 'profile';
@@ -24,17 +24,23 @@
                 console.log(response.user);
                 console.log('response.userinfo');
                 console.log(response.userinfo);
-                MainCtrlService.userData = response.userinfo;
+                $timeout(function() {
+                    MainCtrlService.updateUserData(response.userinfo);
+                    console.log('asdf');
+                });
                 // vm.$apply();
             });
         };
 
         vm.initiateDummyModuls = function() {
-            MainApiService.addDummyDataInfModule().then(function(response) {
-            }, function(err) {
+            MainApiService.addDummyDataInfModule().then(function(response) {}, function(err) {
                 if (err)
                     console.log(err);
             });
         };
+
+
+        //init
+        vm.getData();
     }
 })();
