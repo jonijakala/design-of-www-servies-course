@@ -7,7 +7,7 @@
 
     function ContentEditable() {
         return {
-            restrict: "A",
+            restrict: "C",
             require: "ngModel",
             link: function(scope, element, attrs, ngModel) {
 

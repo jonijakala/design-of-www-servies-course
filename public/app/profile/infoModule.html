@@ -1,10 +1,10 @@
 <div ng-repeat="infomodule in vm.CtrlData.user.infoModules" class="module info">
     <div class="module-header">
-        <span class="module-title edit" contenteditable ng-model="infomodule.title"></span>
+        <span class="module-title edit contenteditable" ng-model="infomodule.title"></span>
         <!-- <span class="module-title edit" contenteditable ng-model="infomodule.title">{{infomodule.title}}</span> -->
     </div>
 <!-- TEST -->
-    <p ng-click="console.log(vm.CtrlData.user);">{{infomodule.title}}</p>
+    <p id="asdf1">{{infomodule.title}}</p>
     <div ng-repeat="infoset in infomodule.infosets" class="infoset">
         <div class="infoset-left">
             <div class="infoset-end edit">{{infoset.endYear}}<span ng-show="infoset.endMonth">/{{infoset.endMonth}}</span>
