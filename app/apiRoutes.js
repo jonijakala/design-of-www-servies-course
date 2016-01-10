@@ -73,8 +73,7 @@ module.exports = function() {
                 startYear: 2008,
                 endYear: 2010,
                 infoSnips: [{
-                    type: 'paragraph',
-                    content: 'Photoshop designer and MS paint expert.'
+                    txt: 'Photoshop designer and MS paint expert.'
                 }]
             };
             var infoset2 = {
@@ -84,8 +83,7 @@ module.exports = function() {
                 endYear: 2007,
                 endMonth: 9,
                 infoSnips: [{
-                    type: 'paragraph',
-                    content: 'Summer job at strawberry farm. Much nice red strawberry yummy. <3'
+                    txt: 'Summer job at strawberry farm. Much nice red strawberry yummy. <3'
                 }]
             };
 

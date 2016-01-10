@@ -8,7 +8,9 @@
             updateUserData: function(userinfo) {
                 this.data.user = userinfo;
             },
-            'data': {},
+            'data': {
+                edit: false
+            },
             'userData': null,
             'asdf': "MainGtrlService ASDFASDFASF"
                 // 'getModules': function() {

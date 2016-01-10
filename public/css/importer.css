@@ -5928,7 +5928,7 @@ button.close {
 ul {
   margin-bottom: 2px; }
 
-#testrow {
+.buttonrow {
   padding-left: auto;
   padding-right: auto;
   margin-bottom: 30px;

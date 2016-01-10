@@ -15,7 +15,7 @@
                 });
                 return defer.promise;
             },
-            'addDummyDataInfModule': function() {
+            'addDummyDataInModule': function() {
                 var defer = $q.defer();
                 $http.post('/api/user/infoModule').success(function(resp) {
                     defer.resolve(resp);

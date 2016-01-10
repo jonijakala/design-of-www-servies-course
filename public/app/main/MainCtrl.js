@@ -10,7 +10,9 @@
 
         // function MainController(MainApiService) {
         var vm = this;
-        vm.userData = null;
+        vm.CtrlData = MainCtrlService.data;
+        // vm.edit = MainCtrlService.data;
+        // vm.userData = MainCtrlService.;
         vm.active = 'profile';
         // this.tagline = 'To the moon and back!';
         vm.activate = function(page) {
@@ -20,8 +22,6 @@
         vm.getData = function() {
             MainApiService.getUserData().then(function(response) {
                 console.log('asdf. Service funkkar! responssi:');
-                console.log('response.user');
-                console.log(response.user);
                 console.log('response.userinfo');
                 console.log(response.userinfo);
                 $timeout(function() {
