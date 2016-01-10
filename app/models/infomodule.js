@@ -15,9 +15,14 @@ var infoSetSchema = mongoose.Schema({
 });
 
 var infoSnipSchema = mongoose.Schema({
-    type: String,
-    // content: Schema.Types.Mixed
-    content: mongoose.Schema.Types.Mixed
+    txt: String,
+    list: [String],
+    // pair: [String]
+
+
+    // type: String,
+    // // content: Schema.Types.Mixed
+    // content: mongoose.Schema.Types.Mixed
 });
 
 /*
