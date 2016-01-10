@@ -16,7 +16,7 @@
                 }
 
                 ngModel.$render = function() {
-                    element.html(ngModel.$viewValue || "asdf5");
+                    element.html(ngModel.$viewValue || "");
                 };
 
                 element.on("blur keyup change", function() {
