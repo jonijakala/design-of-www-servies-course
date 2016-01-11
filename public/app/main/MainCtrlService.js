@@ -14,6 +14,7 @@
             },
             'userData': null,
             saveUser: function() {
+                this.data.edit = false;
                 console.log('Saving!');
                 MainApiService.saveUser(this.data.user, this.data.userID).then(function(response) {
                     console.log(response);
@@ -23,8 +24,13 @@
             },
             editMode: function(editNow) {
                 var edits = document.getElementsByClassName("contenteditable");
-
-                var bool = this.data.edit = !this.data.edit;
+                var bool;
+                if (typeof(editNow) === 'boolean')
+                    bool = editNow;
+                else
+                    bool = !this.data.edit;
+                    
+                this.data.edit = bool;
 
                 console.log(bool);
                 for (var i = 0; i < edits.length; i++) {
