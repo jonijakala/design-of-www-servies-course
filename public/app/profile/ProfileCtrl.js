@@ -24,23 +24,16 @@
         };
 
         vm.saveUser = function() {
-            console.log('todo: saveuser!');
+            MainCtrlService.saveUser();
         };
 
         vm.logUser = function() {
             console.log(vm.CtrlData.user);
+            console.log(MainCtrlService.data.userID);
         };
 
         vm.editMode = function() {
-            var edits = document.getElementsByClassName("contenteditable");
-            
-            var bool = vm.CtrlData.edit = !vm.CtrlData.edit;
-
-            console.log(bool);
-            for (var i = 0; i < edits.length; i++) {
-                console.log('Log edits: ' + edits[i]);
-                edits[i].setAttribute("contenteditable", bool.toString());
-            }
+            MainCtrlService.editMode();
             // console.log(vm.CtrlData.user);
             // console.log('Log edits: ' + edits[0]);
             // edits[0].

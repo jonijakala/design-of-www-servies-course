@@ -23,7 +23,11 @@
             MainApiService.getUserData().then(function(response) {
                 console.log(response.userinfo);
                 $timeout(function() {
-                    MainCtrlService.updateUserData(response.userinfo);
+                    // MainCtrlService.updateUserData(response.userinfo);
+                    MainCtrlService.data.user = response.userinfo;
+                    console.log('id: ' + response._id);
+                    MainCtrlService.data.userID = response._id;
+
                 });
                 // vm.$apply();
             });

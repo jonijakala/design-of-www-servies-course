@@ -1,9 +1,9 @@
 (function() {
     angular
         .module('MainModule')
-        .factory('MainApiService', ['MainCtrlService', '$rootScope', '$http', '$q', MainApiService]);
+        .factory('MainApiService', ['$rootScope', '$http', '$q', MainApiService]);
 
-    function MainApiService(MainCtrlService, $rootScope, $http, $q) {
+    function MainApiService($rootScope, $http, $q) {
         return {
             'getUserData': function() {
                 var defer = $q.defer();
@@ -23,7 +23,18 @@
                     defer.reject(err);
                 });
                 return defer.promise;
-            }
+            },
+            saveUser: function(userinfo, userID) {
+            // updateUser: function(user_id, userinfo) {
+                var defer = $q.defer();
+                console.log('userID '+userID);
+                $http.put('/api/user/' + userID, userinfo).success(function(resp) {
+                    defer.resolve(resp);
+                }).error(function(err) {
+                    defer.reject(err);
+                });
+                return defer.promise;
+            },
             // 'getModules': function() {
             //     var defer = $q.defer();
             //     $http.get('/modules/getModules').success(function(resp) {
