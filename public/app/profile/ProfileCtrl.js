@@ -2,16 +2,17 @@
     'use strict';
 
     angular
-    .module('MainModule')
-    .controller('ProfileController', ['$scope', '$timeout', 'MainCtrlService', 'MainApiService', ProfileController]);
+        .module('MainModule')
+        .controller('ProfileController', ['$scope', '$timeout', 'MainCtrlService', 'MainApiService', ProfileController]);
     // .controller('ProfileController', ['$rootScope', 'CvService', ProfileController]);
 
     // function ProfileController($rootScope, CvService) {
     function ProfileController($scope, $timeout, MainCtrlService, MainApiService) {
         var vm = this;
         vm.CtrlData = MainCtrlService.data;
+        vm.asdf3 = 'Tää o asdf kolomone3';
         // vm.edit = MainCtrlService.data;
-        
+
         vm.initSampleModules = function() {
             MainApiService.addDummyDataInModule().then(function(response) {
                 console.log('dummydata');
@@ -21,6 +22,23 @@
                 console.log(err);
             });
         };
+
+        vm.saveUser = function() {
+            MainCtrlService.saveUser();
+        };
+
+        vm.logUser = function() {
+            console.log(vm.CtrlData.user);
+            console.log(MainCtrlService.data.userID);
+        };
+
+        vm.editMode = function() {
+            MainCtrlService.editMode();
+            // console.log(vm.CtrlData.user);
+            // console.log('Log edits: ' + edits[0]);
+            // edits[0].
+        };
+
 
         // $timeout(function() {
         //     vm.update();
@@ -76,18 +94,18 @@
             });
         };
 
-        vm.editMode = function() {
-            var edits = document.getElementsByClassName("edit");
-            var bool = (!vm.CtrlData.edit);
-            console.log(bool);
-            for (var i = 0; i < edits.length; i++) {
-                console.log('Log edits: ' + edits[i]);
-                edits[i].setAttribute("contenteditable", bool.toString());
-            }
-            console.log(vm.CtrlData.user);
-            // console.log('Log edits: ' + edits[0]);
-            // edits[0].
-        };
+        // vm.editMode = function() {
+        //     var edits = document.getElementsByClassName("edit");
+        //     var bool = (!vm.CtrlData.edit);
+        //     console.log(bool);
+        //     for (var i = 0; i < edits.length; i++) {
+        //         console.log('Log edits: ' + edits[i]);
+        //         edits[i].setAttribute("contenteditable", bool.toString());
+        //     }
+        //     console.log(vm.CtrlData.user);
+        //     // console.log('Log edits: ' + edits[0]);
+        //     // edits[0].
+        // };
 
         // vm.add = function () {
         //  var el = $compile( '<cv-info-module text="modul1"></cv-info-module>' )( vm );
