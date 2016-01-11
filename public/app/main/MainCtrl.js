@@ -16,6 +16,8 @@
         vm.active = 'profile';
         // this.tagline = 'To the moon and back!';
         vm.activate = function(page) {
+            // MainCtrlService.data.edit = false;
+            MainCtrlService.editMode(false);
             vm.active = page;
         };
 

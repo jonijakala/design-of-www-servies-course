@@ -5934,3 +5934,12 @@ ul {
   margin-bottom: 30px;
   padding-top: 25px;
   text-align: center; }
+
+[contenteditable='true'],
+[contenteditable='false'] {
+  transition: all 0.3s ease-in-out; }
+
+[contenteditable='true'] {
+  border: 2px dotted #ccc;
+  background-color: #FCFCFC;
+  padding: 5px; }

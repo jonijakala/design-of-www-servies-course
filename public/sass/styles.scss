@@ -7,7 +7,7 @@ $markerLineWidth: 150px;
 $markerLineHeigth: 3px;
 $moduleMargin: 10px;
 // body {
-// 	padding: 0 auto;
+//  padding: 0 auto;
 // }
 .main {
     margin: 50px auto;
@@ -43,7 +43,7 @@ $moduleMargin: 10px;
 }
 
 .view-tab:not(.activeview):hover {
-	text-decoration: underline;
+    text-decoration: underline;
 }
 
 .module-title::before,
@@ -166,4 +166,16 @@ ul {
     margin-bottom: 30px;
     padding-top: 25px;
     text-align: center;
+}
+
+[contenteditable='true'],
+[contenteditable='false'] {
+
+    transition: all 0.3s ease-in-out;
+}
+
+[contenteditable='true'] {
+    border: 2px dotted #ccc;
+    background-color: #FCFCFC;
+    padding: 5px;
 }
