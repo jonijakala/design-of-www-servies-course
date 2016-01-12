@@ -36,6 +36,22 @@
             MainCtrlService.editMode();
         };
 
+        vm.addInfoSet = function(index) {
+            console.log(index);
+            var info = {
+                endYear: 2014,
+                startYear: 2009,
+                title: "Entry title",
+                infoSnips: [{ txt: "Sample Text" }],
+            };
+            // console.log(
+                MainCtrlService.data.user.infoModules[index].infosets.push(info);
+                // );
+        };
+
+        vm.addModule = function() {
+        };
+
 
         // $timeout(function() {
         //     vm.update();
