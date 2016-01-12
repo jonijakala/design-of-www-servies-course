@@ -41,12 +41,6 @@
         //     vm.update();
         // }, 200);
 
-        vm.asdfData = {};
-        vm.modules = [];
-        vm.modul1 = {
-            'title': 'This is a Title!!'
-        };
-
         // vm.modules.push({'title':'this is a title'});
         // vm.modules.push({'title':'fasdfs'});
 
@@ -54,42 +48,42 @@
         //     vm.modules = response;
         // });
 
-        vm.addModule = function($compile) {
-            CvService.addModule().then(function(response) {
-                console.log(response);
-                console.log(response.title);
-                vm.modules.push(response);
+        // vm.addModule = function($compile) {
+        //     CvService.addModule().then(function(response) {
+        //         console.log(response);
+        //         console.log(response.title);
+        //         vm.modules.push(response);
 
-                // vm.modul1 = response;
-                // var node = document.createElement('cv-info-module');
-                // node.setAttribute("module", "modul1");
-                // var element = document.getElementById('testi');
-                // element.appendChild(node);
-            });
-            // vm.add();
-        };
+        //         // vm.modul1 = response;
+        //         // var node = document.createElement('cv-info-module');
+        //         // node.setAttribute("module", "modul1");
+        //         // var element = document.getElementById('testi');
+        //         // element.appendChild(node);
+        //     });
+        //     // vm.add();
+        // };
 
-        vm.removeModule = function(module) {
-            console.log('attempting: removeModule on following: ' + module);
-            var index = vm.modules.indexOf(module);
-            console.log('index: ' + index);
-            index = (index >= 0) ? index : 0;
-            console.log('index: ' + index);
-            console.log('vm.modules: ' + vm.modules);
-            // vm.modules.splice(index, 1);
+        // vm.removeModule = function(module) {
+        //     console.log('attempting: removeModule on following: ' + module);
+        //     var index = vm.modules.indexOf(module);
+        //     console.log('index: ' + index);
+        //     index = (index >= 0) ? index : 0;
+        //     console.log('index: ' + index);
+        //     console.log('vm.modules: ' + vm.modules);
+        //     // vm.modules.splice(index, 1);
 
-            CvService.removeModule(module).then(function(response) {
-                vm.modules.splice(vm.modules.indexOf(module), 1);
-                console.log('vm.modules: ' + vm.modules);
-            });
-        };
+        //     CvService.removeModule(module).then(function(response) {
+        //         vm.modules.splice(vm.modules.indexOf(module), 1);
+        //         console.log('vm.modules: ' + vm.modules);
+        //     });
+        // };
 
-        vm.addInfoSet = function() {
-            CvService.addInfoSet().then(function(response) {
-                console.log('asdfTestii!!');
-                console.log(response);
-            });
-        };
+        // vm.addInfoSet = function() {
+        //     CvService.addInfoSet().then(function(response) {
+        //         console.log('asdfTestii!!');
+        //         console.log(response);
+        //     });
+        // };
 
         // vm.editMode = function() {
         //     var edits = document.getElementsByClassName("edit");

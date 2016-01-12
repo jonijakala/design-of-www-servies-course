@@ -4,7 +4,7 @@
         <!-- <span class="module-title contenteditable" contenteditable ng-model="infomodule.title">{{infomodule.title}}</span> -->
     </div>
     <div class="module-edit-ctrl" ng-show="vm.CtrlData.edit">
-        <button type="submit" class="module-edit-btn btn btn-primary btn-xs" ng-click="">
+        <button type="submit" class="module-edit-btn btn btn-primary btn-xs btn-red-hover" ng-click="">
             <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
         </button>
         <button type="submit" ng-hide="{{$first}}" class="module-edit-btn btn btn-primary btn-xs" ng-click="">
@@ -33,6 +33,20 @@
                 </ul>
             </div>
         </div>
+        <div class="infoset-edit-ctrl" ng-show="vm.CtrlData.edit">
+        <button type="submit" class="module-edit-btn btn btn-primary btn-xs btn-red-hover" ng-click="">
+            <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+        </button>
+        <button type="submit" ng-hide="{{$first}}" class="module-edit-btn btn btn-primary btn-xs" ng-click="">
+            <span class="rotate2 glyphicon glyphicon-share-alt" aria-hidden="true"></span>
+        </button>
+        <button type="submit" ng-hide="{{$last}}" class="module-edit-btn btn btn-primary btn-xs" ng-click="">
+            <span class="rotate1 glyphicon glyphicon-share-alt" aria-hidden="true"></span>
+        </button>
+    </div>
+    </div>
+    <div class="buttonrow" ng-show="vm.CtrlData.edit">
+    <button type="submit" class="test btn btn-primary btn-xs" ng-click="vm.addInfoSet()">New Entry</button>
     </div>
     <!-- END INFOSET -->
 </div>
@@ -40,7 +54,11 @@
 <div class="buttonrow" ng-show="vm.CtrlData.user.infoModules.length < 1">
     <button type="submit" class="test btn btn-primary btn-sm" ng-click="vm.initSampleModules()">Init modeldata!!</button>
 </div>
-<div class="buttonrow" id="testrow">
+<div class="buttonrow" id="add-modules" ng-show="vm.CtrlData.edit">
+    <button type="submit" class="test btn btn-primary btn-sm" ng-click="vm.addModule()">New Section</button>
+</div>
+
+<div class="buttonrow" id="testrow" style="display:none">
     <!-- <div class="buttonrow" ng-show="v.CtrlData.contenteditable" id="testrow"> -->
     <!-- <button type="submit" class="test btn btn-primary btn-sm" ng-click="vm.update()">$apply</button> -->
     <button type="submit" class="test btn btn-primary btn-sm" ng-click="vm.saveUser()">Save Changes</button>

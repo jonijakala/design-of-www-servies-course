@@ -25,6 +25,10 @@
             MainCtrlService.editMode();
         };
 
+        vm.cancelEdits = function() {
+            MainCtrlService.cancelEdits();
+        };
+
         vm.getData = function() {
             MainApiService.getUserData().then(function(response) {
                 console.log(response.userinfo);

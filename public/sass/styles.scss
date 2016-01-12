@@ -16,6 +16,7 @@ body {
     max-width: $main-width;
     min-height: 500px;
     border-radius: 20px;
+    padding-bottom: 15px;
 }
 
 .header {
@@ -119,6 +120,7 @@ body {
 }
 
 .infoset {
+    position: relative;
     display: flex;
     flex-direction: row;
 }
@@ -132,7 +134,7 @@ body {
 }
 
 .infoset-beef {
-    // height: 301px;
+    max-width: 320px;
 }
 
 .infoset-beef-title {
@@ -168,8 +170,8 @@ ul {
 .buttonrow {
     padding-left: auto;
     padding-right: auto;
-    margin-bottom: 30px;
-    padding-top: 25px;
+    margin-bottom: 20px;
+    // padding-top: 25px;
     text-align: center;
 }
 
@@ -190,6 +192,12 @@ ul {
     top: 0;
     width: 150px;
     height: 50px;
+}
+
+.infoset-edit-ctrl {
+    @extend .module-edit-ctrl;
+    left: 376px;
+    top: 19px;
 }
 
 .module-edit-btn {
@@ -229,7 +237,10 @@ ul {
 
 .red-btn,
 .red-btn:focus {
-    background-color: #FFCC00;
+    border-color: #D40015;
+    border-width: 1px;
 }
 
-
+.btn-red-hover:hover {
+    background-color: #BF0013;
+}
