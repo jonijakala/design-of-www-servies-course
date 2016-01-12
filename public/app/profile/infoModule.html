@@ -1,28 +1,52 @@
 <div ng-repeat="infomodule in vm.CtrlData.user.infoModules" class="module info">
     <div class="module-header">
-        <span class="module-title contenteditable" ng-model="infomodule.title"></span>
-        <!-- <span class="module-title contenteditable" contenteditable ng-model="infomodule.title">{{infomodule.title}}</span> -->
+        <span class="module-title " contenteditable="{{vm.CtrlData.edit}}" ng-model="infomodule.title"></span>
+        <!-- <span class="module-title " contenteditable="{{vm.CtrlData.edit}}"  ng-model="infomodule.title">{{infomodule.title}}</span> -->
     </div>
-    <!-- TEST -->
+    <div class="module-edit-ctrl" ng-show="vm.CtrlData.edit">
+        <button type="submit" class="module-edit-btn btn btn-primary btn-xs btn-red-hover" ng-click="">
+            <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+        </button>
+        <button type="submit" ng-hide="{{$first}}" class="module-edit-btn btn btn-primary btn-xs" ng-click="">
+            <span class="rotate2 glyphicon glyphicon-share-alt" aria-hidden="true"></span>
+        </button>
+        <button type="submit" ng-hide="{{$last}}" class="module-edit-btn btn btn-primary btn-xs" ng-click="">
+            <span class="rotate1 glyphicon glyphicon-share-alt" aria-hidden="true"></span>
+        </button>
+    </div>
     <div ng-repeat="infoset in infomodule.infosets" class="infoset">
         <div class="infoset-left">
-            <div class="infoset-end contenteditable" ng-model="infoset.endYear">{{infoset.endYear}}<span class="contenteditable" ng-model="infoset.endMonth" ng-show="infoset.endMonth">/{{infoset.endMonth}}</span>
+            <div class="infoset-end " contenteditable="{{vm.CtrlData.edit}}" ng-model="infoset.endYear">{{infoset.endYear}}<span class="" contenteditable="{{vm.CtrlData.edit}}" ng-model="infoset.endMonth" ng-show="infoset.endMonth">/{{infoset.endMonth}}</span>
             </div>
             <div class="infoset-until" ng-show="infoset.endYear || infoset.startYear">
                 <span class="glyphicon glyphicon-option-vertical" aria-hidden="true"></span>
             </div>
-            <div class="infoset-start contenteditable" ng-model="infoset.startYear">{{infoset.startYear}}<span class="contenteditable" ng-model="infoset.startMonth" ng-show="infoset.startMonth">/{{infoset.startMonth}}</span>
+            <div class="infoset-start " contenteditable="{{vm.CtrlData.edit}}" ng-model="infoset.startYear">{{infoset.startYear}}<span class="" contenteditable="{{vm.CtrlData.edit}}" ng-model="infoset.startMonth" ng-show="infoset.startMonth">/{{infoset.startMonth}}</span>
             </div>
         </div>
         <div class="infoset-beef">
-            <div class="infoset-beef-title contenteditable" ng-model="infoset.title">{{infoset.title}}</div>
+            <div class="infoset-beef-title " contenteditable="{{vm.CtrlData.edit}}" ng-model="infoset.title">{{infoset.title}}</div>
             <div ng-repeat="infosnip in infoset.infoSnips">
-                <p class="contenteditable" ng-model="infosnip.txt">{{infosnip.txt}}</p>
+                <p class="" contenteditable="{{vm.CtrlData.edit}}" ng-model="infosnip.txt">{{infosnip.txt}}</p>
                 <ul ng-show="infosnip.list">
-                    <li ng-repeat="item in infosnip.list" class="contenteditable" ng-model="item">{{item}}</li>
+                    <li ng-repeat="item in infosnip.list" class="" contenteditable="{{vm.CtrlData.edit}}" ng-model="item">{{item}}</li>
                 </ul>
             </div>
         </div>
+        <div class="infoset-edit-ctrl" ng-show="vm.CtrlData.edit">
+            <button type="submit" class="module-edit-btn btn btn-primary btn-xs btn-red-hover" ng-click="">
+                <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+            </button>
+            <button type="submit" ng-hide="{{$first}}" class="module-edit-btn btn btn-primary btn-xs" ng-click="">
+                <span class="rotate2 glyphicon glyphicon-share-alt" aria-hidden="true"></span>
+            </button>
+            <button type="submit" ng-hide="{{$last}}" class="module-edit-btn btn btn-primary btn-xs" ng-click="">
+                <span class="rotate1 glyphicon glyphicon-share-alt" aria-hidden="true"></span>
+            </button>
+        </div>
+    </div>
+    <div class="buttonrow" ng-show="vm.CtrlData.edit">
+        <button type="submit" class="test btn btn-primary btn-xs" ng-click="vm.addInfoSet($index)">New Entry</button>
     </div>
     <!-- END INFOSET -->
 </div>
@@ -30,7 +54,10 @@
 <div class="buttonrow" ng-show="vm.CtrlData.user.infoModules.length < 1">
     <button type="submit" class="test btn btn-primary btn-sm" ng-click="vm.initSampleModules()">Init modeldata!!</button>
 </div>
-<div class="buttonrow" id="testrow">
+<div class="buttonrow" id="add-modules" ng-show="vm.CtrlData.edit">
+    <button type="submit" class="test btn btn-primary btn-sm" ng-click="vm.addModule()">New Section</button>
+</div>
+<div class="buttonrow" id="testrow" style="display:none">
     <!-- <div class="buttonrow" ng-show="v.CtrlData.contenteditable" id="testrow"> -->
     <!-- <button type="submit" class="test btn btn-primary btn-sm" ng-click="vm.update()">$apply</button> -->
     <button type="submit" class="test btn btn-primary btn-sm" ng-click="vm.saveUser()">Save Changes</button>

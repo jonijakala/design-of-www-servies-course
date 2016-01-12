@@ -14,11 +14,23 @@
         // vm.edit = MainCtrlService.data;
         // vm.userData = MainCtrlService.;
         vm.active = 'profile';
+        vm.editOn = false;
         // this.tagline = 'To the moon and back!';
         vm.activate = function(page) {
             // MainCtrlService.data.edit = false;
             MainCtrlService.editMode(false);
             vm.active = page;
+        };
+
+        vm.editMode = function() {
+            MainCtrlService.editMode();
+            // vm.editOn = !vm.editOn;
+            // console.log(vm.editOn);
+            // console.log(vm.CtrlData.user.name);
+        };
+
+        vm.cancelEdits = function() {
+            MainCtrlService.cancelEdits();
         };
 
         vm.getData = function() {

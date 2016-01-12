@@ -5824,12 +5824,19 @@ button.close {
   .hidden-print {
     display: none !important; } }
 
+body {
+  padding-top: 15px; }
+
 .main {
   margin: 50px auto;
   background: #FFF;
   max-width: 800px;
   min-height: 500px;
-  border-radius: 20px; }
+  border-radius: 20px;
+  padding-bottom: 15px; }
+
+.header {
+  position: relative; }
 
 .profileinfo,
 .img-profile {
@@ -5840,10 +5847,11 @@ button.close {
   vertical-align: middle; }
 
 .view-tab {
+  padding: 0 12px;
   min-width: 80px;
   text-align: center;
   display: inline-block;
-  margin: 10px 15px 3px;
+  margin: 10px 1px 3px;
   font-family: 'Quicksand', sans-serif;
   font-size: 16px;
   color: #565656;
@@ -5873,6 +5881,7 @@ button.close {
   padding-right: auto; }
 
 .module {
+  position: relative;
   align-self: center;
   width: 400px;
   margin-top: 30px;
@@ -5899,6 +5908,7 @@ button.close {
   border-color: #CBEDFE; }
 
 .infoset {
+  position: relative;
   display: flex;
   flex-direction: row; }
 
@@ -5907,6 +5917,9 @@ button.close {
   display: flex;
   flex-direction: column;
   padding: 10px; }
+
+.infoset-beef {
+  max-width: 320px; }
 
 .infoset-beef-title {
   margin-bottom: 1px; }
@@ -5931,8 +5944,7 @@ ul {
 .buttonrow {
   padding-left: auto;
   padding-right: auto;
-  margin-bottom: 30px;
-  padding-top: 25px;
+  margin-bottom: 20px;
   text-align: center; }
 
 [contenteditable='true'],
@@ -5943,3 +5955,52 @@ ul {
   border: 2px dotted #ccc;
   background-color: #FCFCFC;
   padding: 5px; }
+
+.module-edit-ctrl, .infoset-edit-ctrl {
+  position: absolute;
+  left: 404px;
+  top: 0;
+  width: 150px;
+  height: 50px; }
+
+.infoset-edit-ctrl {
+  left: 376px;
+  top: 19px; }
+
+.module-edit-btn {
+  margin: 1px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4px; }
+
+.rotate1 {
+  transform: rotate(90deg); }
+
+.rotate2 {
+  -moz-transform: scaleX(-1);
+  -o-transform: scaleX(-1);
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1) rotate(-90deg);
+  filter: FlipH;
+  -ms-filter: "FlipH"; }
+
+.edit-cancel {
+  font-size: 8px; }
+
+#edit-panel {
+  width: 38px;
+  top: 20px;
+  position: absolute;
+  right: 0; }
+
+.red-btn,
+.red-btn:focus {
+  border-color: #D40015;
+  border-width: 1px; }
+
+.btn-red-hover:hover {
+  background-color: #BF0013; }
+
+.navi {
+  padding-left: 20px; }
