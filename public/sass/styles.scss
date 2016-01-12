@@ -6,9 +6,11 @@ $padding-default: 10px;
 $markerLineWidth: 150px;
 $markerLineHeigth: 3px;
 $moduleMargin: 10px;
-// body {
-//  padding: 0 auto;
-// }
+
+body {
+ padding-top: 15px;
+}
+
 .main {
     margin: 50px auto;
     background: #FFF;
@@ -32,10 +34,11 @@ $moduleMargin: 10px;
 }
 
 .view-tab {
+    padding: 0 12px;
     min-width: 80px;
     text-align: center;
     display: inline-block;
-    margin: 10px 15px 3px;
+    margin: 10px 1px 3px;
     font-family: 'Quicksand', sans-serif;
     font-size: 16px;
     color: $theme-grey;

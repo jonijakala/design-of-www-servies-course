@@ -5824,6 +5824,9 @@ button.close {
   .hidden-print {
     display: none !important; } }
 
+body {
+  padding-top: 15px; }
+
 .main {
   margin: 50px auto;
   background: #FFF;
@@ -5840,10 +5843,11 @@ button.close {
   vertical-align: middle; }
 
 .view-tab {
+  padding: 0 12px;
   min-width: 80px;
   text-align: center;
   display: inline-block;
-  margin: 10px 15px 3px;
+  margin: 10px 1px 3px;
   font-family: 'Quicksand', sans-serif;
   font-size: 16px;
   color: #565656;
