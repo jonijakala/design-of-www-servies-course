@@ -3,7 +3,17 @@
         <span class="module-title contenteditable" ng-model="infomodule.title"></span>
         <!-- <span class="module-title contenteditable" contenteditable ng-model="infomodule.title">{{infomodule.title}}</span> -->
     </div>
-    <!-- TEST -->
+    <div class="module-edit-ctrl" ng-show="vm.CtrlData.edit">
+        <button type="submit" class="module-edit-btn btn btn-primary btn-xs" ng-click="">
+            <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+        </button>
+        <button type="submit" ng-hide="{{$first}}" class="module-edit-btn btn btn-primary btn-xs" ng-click="">
+            <span class="rotate2 glyphicon glyphicon-share-alt" aria-hidden="true"></span>
+        </button>
+        <button type="submit" ng-hide="{{$last}}" class="module-edit-btn btn btn-primary btn-xs" ng-click="">
+            <span class="rotate1 glyphicon glyphicon-share-alt" aria-hidden="true"></span>
+        </button>
+    </div>
     <div ng-repeat="infoset in infomodule.infosets" class="infoset">
         <div class="infoset-left">
             <div class="infoset-end contenteditable" ng-model="infoset.endYear">{{infoset.endYear}}<span class="contenteditable" ng-model="infoset.endMonth" ng-show="infoset.endMonth">/{{infoset.endMonth}}</span>

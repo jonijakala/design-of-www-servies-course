@@ -21,6 +21,10 @@
             vm.active = page;
         };
 
+        vm.editMode = function() {
+            MainCtrlService.editMode();
+        };
+
         vm.getData = function() {
             MainApiService.getUserData().then(function(response) {
                 console.log(response.userinfo);

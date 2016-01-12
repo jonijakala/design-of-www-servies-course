@@ -5834,6 +5834,9 @@ body {
   min-height: 500px;
   border-radius: 20px; }
 
+.header {
+  position: relative; }
+
 .profileinfo,
 .img-profile {
   display: inline-block;
@@ -5877,6 +5880,7 @@ body {
   padding-right: auto; }
 
 .module {
+  position: relative;
   align-self: center;
   width: 400px;
   margin-top: 30px;
@@ -5947,3 +5951,41 @@ ul {
   border: 2px dotted #ccc;
   background-color: #FCFCFC;
   padding: 5px; }
+
+.module-edit-ctrl {
+  position: absolute;
+  left: 404px;
+  top: 0;
+  width: 150px;
+  height: 50px; }
+
+.module-edit-btn {
+  margin: 1px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4px; }
+
+.rotate1 {
+  transform: rotate(90deg); }
+
+.rotate2 {
+  -moz-transform: scaleX(-1);
+  -o-transform: scaleX(-1);
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1) rotate(-90deg);
+  filter: FlipH;
+  -ms-filter: "FlipH"; }
+
+.edit-cancel {
+  font-size: 8px; }
+
+#edit-panel {
+  width: 38px;
+  top: 20px;
+  position: absolute;
+  right: 0; }
+
+.red-btn,
+.red-btn:focus {
+  background-color: #FFCC00; }

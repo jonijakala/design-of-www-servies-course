@@ -34,9 +34,6 @@
 
         vm.editMode = function() {
             MainCtrlService.editMode();
-            // console.log(vm.CtrlData.user);
-            // console.log('Log edits: ' + edits[0]);
-            // edits[0].
         };
 
 
