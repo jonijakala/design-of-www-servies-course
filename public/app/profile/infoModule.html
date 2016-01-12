@@ -1,7 +1,7 @@
 <div ng-repeat="infomodule in vm.CtrlData.user.infoModules" class="module info">
     <div class="module-header">
-        <span class="module-title contenteditable" ng-model="infomodule.title"></span>
-        <!-- <span class="module-title contenteditable"  ng-model="infomodule.title">{{infomodule.title}}</span> -->
+        <span class="module-title " contenteditable="{{vm.CtrlData.edit}}" ng-model="infomodule.title"></span>
+        <!-- <span class="module-title " contenteditable="{{vm.CtrlData.edit}}"  ng-model="infomodule.title">{{infomodule.title}}</span> -->
     </div>
     <div class="module-edit-ctrl" ng-show="vm.CtrlData.edit">
         <button type="submit" class="module-edit-btn btn btn-primary btn-xs btn-red-hover" ng-click="">
@@ -16,20 +16,20 @@
     </div>
     <div ng-repeat="infoset in infomodule.infosets" class="infoset">
         <div class="infoset-left">
-            <div class="infoset-end contenteditable" ng-model="infoset.endYear">{{infoset.endYear}}<span class="contenteditable" ng-model="infoset.endMonth" ng-show="infoset.endMonth">/{{infoset.endMonth}}</span>
+            <div class="infoset-end " contenteditable="{{vm.CtrlData.edit}}" ng-model="infoset.endYear">{{infoset.endYear}}<span class="" contenteditable="{{vm.CtrlData.edit}}" ng-model="infoset.endMonth" ng-show="infoset.endMonth">/{{infoset.endMonth}}</span>
             </div>
             <div class="infoset-until" ng-show="infoset.endYear || infoset.startYear">
                 <span class="glyphicon glyphicon-option-vertical" aria-hidden="true"></span>
             </div>
-            <div class="infoset-start contenteditable" ng-model="infoset.startYear">{{infoset.startYear}}<span class="contenteditable" ng-model="infoset.startMonth" ng-show="infoset.startMonth">/{{infoset.startMonth}}</span>
+            <div class="infoset-start " contenteditable="{{vm.CtrlData.edit}}" ng-model="infoset.startYear">{{infoset.startYear}}<span class="" contenteditable="{{vm.CtrlData.edit}}" ng-model="infoset.startMonth" ng-show="infoset.startMonth">/{{infoset.startMonth}}</span>
             </div>
         </div>
         <div class="infoset-beef">
-            <div class="infoset-beef-title contenteditable" ng-model="infoset.title">{{infoset.title}}</div>
+            <div class="infoset-beef-title " contenteditable="{{vm.CtrlData.edit}}" ng-model="infoset.title">{{infoset.title}}</div>
             <div ng-repeat="infosnip in infoset.infoSnips">
-                <p class="contenteditable" ng-model="infosnip.txt">{{infosnip.txt}}</p>
+                <p class="" contenteditable="{{vm.CtrlData.edit}}" ng-model="infosnip.txt">{{infosnip.txt}}</p>
                 <ul ng-show="infosnip.list">
-                    <li ng-repeat="item in infosnip.list" class="contenteditable" ng-model="item">{{item}}</li>
+                    <li ng-repeat="item in infosnip.list" class="" contenteditable="{{vm.CtrlData.edit}}" ng-model="item">{{item}}</li>
                 </ul>
             </div>
         </div>

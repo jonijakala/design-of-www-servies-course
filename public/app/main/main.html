@@ -2,9 +2,9 @@
     <div class="header">
         <img class="img-rounded img-profile" src="images/profile.jpg" width="150px" height="150px">
         <div class="profileinfo">
-            <h2 class="name contenteditable" ng-model="main.CtrlData.user.name">Ukkeli Pelimanni</h2>
-            <!-- <h2 class="name" contenteditable="{{main.editOn}}" ng-model="main.CtrlData.user.name">{{main.CtrlData.user.name}}</h2> -->
-            <h3><small class="contenteditable" ng-model="main.CtrlData.user.position">UX Antimessiah</small></h4>
+            <!-- <h2 class="name contenteditable" ng-model="main.CtrlData.user.name">Ukkeli Pelimanni</h2> -->
+            <h2 class="name" contenteditable="{{main.CtrlData.edit}}" ng-model="main.CtrlData.user.name">{{main.CtrlData.user.name}}</h2>
+            <h3><small contenteditable="{{main.CtrlData.edit}}" ng-model="main.CtrlData.user.position">UX Antimessiah</small></h4>
             <!-- <button ng-click="main.getData()">apiGet</button> -->
         </div>
         <div id="edit-panel">

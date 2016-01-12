@@ -38,20 +38,18 @@
                     // console.log(this.userDataBackup);
                 }
 
-                var edits = document.getElementsByClassName("contenteditable");
-                var bool;
-                if (typeof(editNow) === 'boolean')
-                    bool = editNow;
-                else
+                // var edits = document.getElementsByClassName("contenteditable");
+                var bool = editNow;
+                if (typeof(bool) !== 'boolean')
                     bool = !this.data.edit;
 
                 this.data.edit = bool;
 
-                console.log('making edit to: '+bool);
-                for (var i = 0; i < edits.length; i++) {
-                    // console.log('Log edits: ' + edits[i]);
-                    edits[i].setAttribute("contenteditable", bool.toString());
-                }
+                // console.log('making edit to: '+bool);
+                // for (var i = 0; i < edits.length; i++) {
+                //     // console.log('Log edits: ' + edits[i]);
+                //     edits[i].setAttribute("contenteditable", bool.toString());
+                // }
 
                 //save current model!
                 if (this.data.edit === false && editNow !== false) {
