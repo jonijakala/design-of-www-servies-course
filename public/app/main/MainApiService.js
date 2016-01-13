@@ -1,18 +1,29 @@
 (function() {
     angular
         .module('MainModule')
-        .factory('MainApiService', ['$rootScope', '$http', '$q', MainApiService]);
+        .factory('MainApiService', ['$http', '$q', MainApiService]);
 
-    function MainApiService($rootScope, $http, $q) {
+    function MainApiService($http, $q) {
         return {
-            'getUserData': function() {
+            'getUserData': function(userID) {
                 var defer = $q.defer();
-                $http.get('/api/user/').success(function(resp) {
-                    // MainCtrlService.userData = resp.userinfo;
-                    defer.resolve(resp);
-                }).error(function(err) {
-                    defer.reject(err);
-                });
+                console.log(userID);
+                if (userID) {
+                    console.log('jee');
+                    $http.get('/api/user/' + userID).success(function(resp) {
+                        // MainCtrlService.userData = resp.userinfo;
+                        defer.resolve(resp);
+                    }).error(function(err) {
+                        defer.reject(err);
+                    });
+                } else {
+                    $http.get('/api/user/').success(function(resp) {
+                        // MainCtrlService.userData = resp.userinfo;
+                        defer.resolve(resp);
+                    }).error(function(err) {
+                        defer.reject(err);
+                    });
+                }
                 return defer.promise;
             },
             'addDummyDataInModule': function() {
@@ -25,9 +36,9 @@
                 return defer.promise;
             },
             saveUser: function(userinfo, userID) {
-            // updateUser: function(user_id, userinfo) {
+                // updateUser: function(user_id, userinfo) {
                 var defer = $q.defer();
-                console.log('userID '+userID);
+                console.log('userID ' + userID);
                 $http.put('/api/user/' + userID, userinfo).success(function(resp) {
                     defer.resolve(resp);
                 }).error(function(err) {
@@ -35,42 +46,6 @@
                 });
                 return defer.promise;
             },
-            // 'getModules': function() {
-            //     var defer = $q.defer();
-            //     $http.get('/modules/getModules').success(function(resp) {
-            //         defer.resolve(resp);
-            //     }).error(function(err) {
-            //         defer.reject(err);
-            //     });
-            //     return defer.promise;
-            // },
-            // 'addModule': function() {
-            //     var defer = $q.defer();
-            //     $http.post('/modules/addModule').success(function(resp) {
-            //         defer.resolve(resp);
-            //     }).error(function(err) {
-            //         defer.reject(err);
-            //     });
-            //     return defer.promise;
-            // },
-            // 'removeModule': function(module) {
-            //     var defer = $q.defer();
-            //     $http.post('/modules/removeModule', module).success(function(resp) {
-            //         defer.resolve(resp);
-            //     }).error(function(err) {
-            //         defer.reject(err);
-            //     });
-            //     return defer.promise;
-            // },
-            // 'addInfoSet': function() {
-            //     var defer = $q.defer();
-            //     $http.post('/modules/addInfoSet').success(function(resp) {
-            //         defer.resolve(resp);
-            //     }).error(function(err) {
-            //         defer.reject(err);
-            //     });
-            //     return defer.promise;
-            // }
         };
     }
 })();

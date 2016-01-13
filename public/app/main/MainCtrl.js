@@ -3,30 +3,25 @@
 
     angular
         .module('MainModule')
-        .controller('MainController', ['MainApiService', 'MainCtrlService', '$timeout', MainController]);
+        .controller('MainController', ['MainApiService', 'MainCtrlService', '$timeout', '$stateParams', MainController]);
 
-    function MainController(MainApiService, MainCtrlService, $timeout) {
-        //     .controller('MainController', ['MainApiService', MainController]);
+    function MainController(MainApiService, MainCtrlService, $timeout, $stateParams) {
 
-        // function MainController(MainApiService) {
         var vm = this;
         vm.CtrlData = MainCtrlService.data;
-        // vm.edit = MainCtrlService.data;
-        // vm.userData = MainCtrlService.;
         vm.active = 'profile';
         vm.editOn = false;
-        // this.tagline = 'To the moon and back!';
+        vm.public = $stateParams.public;
+        vm.pubLink = '';
+        vm.showPubLink = false;
+
         vm.activate = function(page) {
-            // MainCtrlService.data.edit = false;
             MainCtrlService.editMode(false);
             vm.active = page;
         };
 
         vm.editMode = function() {
             MainCtrlService.editMode();
-            // vm.editOn = !vm.editOn;
-            // console.log(vm.editOn);
-            // console.log(vm.CtrlData.user.name);
         };
 
         vm.cancelEdits = function() {
@@ -34,16 +29,19 @@
         };
 
         vm.getData = function() {
-            MainApiService.getUserData().then(function(response) {
+            var userID;
+            if (vm.public) {
+                userID = window.location.pathname.split( '/' )[2];
+            }
+
+            MainApiService.getUserData(userID).then(function(response) {
                 console.log(response.userinfo);
                 $timeout(function() {
-                    // MainCtrlService.updateUserData(response.userinfo);
                     MainCtrlService.data.user = response.userinfo;
                     console.log('id: ' + response._id);
                     MainCtrlService.data.userID = response._id;
-
+                    vm.pubLink = 'http://web-res.herokuapp.com/public/' + response._id;
                 });
-                // vm.$apply();
             });
         };
 
@@ -56,8 +54,10 @@
             });
         };
 
+        vm.togglPubLink = function() {
+            vm.showPubLink = !vm.showPubLink;
+        };
 
-        //init
         vm.getData();
     }
 })();
