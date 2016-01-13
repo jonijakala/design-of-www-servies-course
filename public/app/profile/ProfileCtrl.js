@@ -61,6 +61,11 @@
         };
 
         vm.moduleDelete = function(index) {
+            if (index < 0 || index >= vm.CtrlData.user.infoModules.length) {
+                console.log('moduletDelete error!!index');
+                return;
+            }
+            vm.CtrlData.user.infoModules.splice(index, 1);
 
         };
 
