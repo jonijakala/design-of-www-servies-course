@@ -64,10 +64,6 @@
 
         };
 
-        vm.moduleShift = function(index, swapIndex) {
-
-        };
-
         vm.infosetDelete = function(index, module) {
             // vm.infosetDelete = function(index, moduleIndex) {
             if (index < 0 || index >= module.infosets.length) {
@@ -78,16 +74,28 @@
             // vm.CtrlData.user.infoModules[moduleIndex].infosets[]
         };
 
-        vm.infosetShift = function(index, swapIndex, module) {
-            if (index < 0 || index >= module.infosets.length || swapIndex < 0 || swapIndex >= module.infosets.length) {
-                console.log('infosetShift error!!index');
+        vm.shiftInfo = function(index, swapIndex, module) {
+
+            var array;
+            if (!module) {
+                array = vm.CtrlData.user.infoModules;
+            } else {
+                array = module.infosets;
+            }
+            console.log(array);
+
+            if (index < 0 || index >= array.length || swapIndex < 0 || swapIndex >= array.length) {
+                console.log('Shift error!!index');
                 return;
             }
-            var tempSwap = module.infosets[swapIndex];
-            module.infosets[swapIndex] = module.infosets[index];
-            module.infosets[index] = tempSwap;
+            var tempSwap = array[swapIndex];
+            array[swapIndex] = array[index];
+            array[index] = tempSwap;
+            console.log(array);
+            $timeout(function() {
+                $scope.$apply();
+            });
         };
-
 
         // $timeout(function() {
         //     vm.update();

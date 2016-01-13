@@ -5959,9 +5959,7 @@ ul {
 .module-edit-ctrl, .infoset-edit-ctrl {
   position: absolute;
   left: 404px;
-  top: 0;
-  width: 150px;
-  height: 50px; }
+  top: 0; }
 
 .infoset-edit-ctrl {
   left: 376px;
