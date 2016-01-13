@@ -8,10 +8,10 @@
         <button type="submit" class="module-edit-btn btn btn-primary btn-xs btn-red-hover" ng-click="vm.moduleDelete($index)">
             <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
         </button>
-        <button type="submit" ng-hide="{{$first}}" class="module-edit-btn btn btn-primary btn-xs" ng-click="vm.shiftInfo($index, $index - 1)">
+        <button type="submit" class="module-edit-btn btn btn-primary btn-xs" ng-click="vm.shiftInfo($index, $index - 1)">
             <span class="rotate2 glyphicon glyphicon-share-alt" aria-hidden="true"></span>
         </button>
-        <button type="submit" ng-hide="{{$last}}" class="module-edit-btn btn btn-primary btn-xs" ng-click="vm.shiftInfo($index, $index + 1)">
+        <button type="submit" class="module-edit-btn btn btn-primary btn-xs" ng-click="vm.shiftInfo($index, $index + 1)">
             <span class="rotate1 glyphicon glyphicon-share-alt" aria-hidden="true"></span>
         </button>
     </div>
@@ -39,10 +39,10 @@
             <button type="submit" class="module-edit-btn btn btn-primary btn-xs btn-red-hover" ng-click="vm.infosetDelete($index, infomodule)">
                 <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
             </button>
-            <button type="submit" ng-hide="{{$first}}" class="module-edit-btn btn btn-primary btn-xs" ng-click="vm.shiftInfo($index, $index - 1, infomodule)">
+            <button type="submit" class="module-edit-btn btn btn-primary btn-xs" ng-click="vm.shiftInfo($index, $index - 1, infomodule)">
                 <span class="rotate2 glyphicon glyphicon-share-alt" aria-hidden="true"></span>
             </button>
-            <button type="submit" ng-hide="{{$last}}" class="module-edit-btn btn btn-primary btn-xs" ng-click="vm.shiftInfo($index, $index + 1, infomodule)">
+            <button type="submit" class="module-edit-btn btn btn-primary btn-xs" ng-click="vm.shiftInfo($index, $index + 1, infomodule)">
                 <span class="rotate1 glyphicon glyphicon-share-alt" aria-hidden="true"></span>
             </button>
         </div>
