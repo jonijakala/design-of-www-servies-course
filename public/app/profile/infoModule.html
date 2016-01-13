@@ -4,13 +4,13 @@
         <!-- <span class="module-title " contenteditable="{{vm.CtrlData.edit}}"  ng-model="infomodule.title">{{infomodule.title}}</span> -->
     </div>
     <div class="module-edit-ctrl" ng-show="vm.CtrlData.edit">
-        <button type="submit" class="module-edit-btn btn btn-primary btn-xs btn-red-hover" ng-click="">
+        <button type="submit" class="module-edit-btn btn btn-primary btn-xs btn-red-hover" ng-click="vm.moduleDelete($index)">
             <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
         </button>
-        <button type="submit" ng-hide="{{$first}}" class="module-edit-btn btn btn-primary btn-xs" ng-click="">
+        <button type="submit" ng-hide="{{$first}}" class="module-edit-btn btn btn-primary btn-xs" ng-click="vm.moduleShift($index, $index - 1)">
             <span class="rotate2 glyphicon glyphicon-share-alt" aria-hidden="true"></span>
         </button>
-        <button type="submit" ng-hide="{{$last}}" class="module-edit-btn btn btn-primary btn-xs" ng-click="">
+        <button type="submit" ng-hide="{{$last}}" class="module-edit-btn btn btn-primary btn-xs" ng-click="vm.moduleShift($index, $index + 1)">
             <span class="rotate1 glyphicon glyphicon-share-alt" aria-hidden="true"></span>
         </button>
     </div>
@@ -34,13 +34,14 @@
             </div>
         </div>
         <div class="infoset-edit-ctrl" ng-show="vm.CtrlData.edit">
-            <button type="submit" class="module-edit-btn btn btn-primary btn-xs btn-red-hover" ng-click="">
+            <!-- <button type="submit" class="module-edit-btn btn btn-primary btn-xs btn-red-hover" ng-click="vm.infosetDelete($index, $parent.$index)"> -->
+            <button type="submit" class="module-edit-btn btn btn-primary btn-xs btn-red-hover" ng-click="vm.infosetDelete($index, infomodule)">
                 <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
             </button>
-            <button type="submit" ng-hide="{{$first}}" class="module-edit-btn btn btn-primary btn-xs" ng-click="">
+            <button type="submit" ng-hide="{{$first}}" class="module-edit-btn btn btn-primary btn-xs" ng-click="vm.infosetShift($index, $index - 1, infomodule)">
                 <span class="rotate2 glyphicon glyphicon-share-alt" aria-hidden="true"></span>
             </button>
-            <button type="submit" ng-hide="{{$last}}" class="module-edit-btn btn btn-primary btn-xs" ng-click="">
+            <button type="submit" ng-hide="{{$last}}" class="module-edit-btn btn btn-primary btn-xs" ng-click="vm.infosetShift($index, $index + 1, infomodule)">
                 <span class="rotate1 glyphicon glyphicon-share-alt" aria-hidden="true"></span>
             </button>
         </div>

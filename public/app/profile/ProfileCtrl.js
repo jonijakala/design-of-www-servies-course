@@ -42,11 +42,13 @@
                 endYear: 2014,
                 startYear: 2009,
                 title: "Entry title",
-                infoSnips: [{ txt: "Sample Text" }],
+                infoSnips: [{
+                    txt: "Sample Text"
+                }],
             };
             // console.log(
-                MainCtrlService.data.user.infoModules[index].infosets.push(info);
-                // );
+            MainCtrlService.data.user.infoModules[index].infosets.push(info);
+            // );
         };
 
         // same as initSampleModules!
@@ -56,6 +58,34 @@
             }, function(err) {
                 console.log(err);
             });
+        };
+
+        vm.moduleDelete = function(index) {
+
+        };
+
+        vm.moduleShift = function(index, swapIndex) {
+
+        };
+
+        vm.infosetDelete = function(index, module) {
+            // vm.infosetDelete = function(index, moduleIndex) {
+            if (index < 0 || index >= module.infosets.length) {
+                console.log('infosetDelete error!!index');
+                return;
+            }
+            module.infosets.splice(index, 1);
+            // vm.CtrlData.user.infoModules[moduleIndex].infosets[]
+        };
+
+        vm.infosetShift = function(index, swapIndex, module) {
+            if (index < 0 || index >= module.infosets.length || swapIndex < 0 || swapIndex >= module.infosets.length) {
+                console.log('infosetShift error!!index');
+                return;
+            }
+            var tempSwap = module.infosets[swapIndex];
+            module.infosets[swapIndex] = module.infosets[index];
+            module.infosets[index] = tempSwap;
         };
 
 
