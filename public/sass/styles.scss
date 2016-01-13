@@ -258,3 +258,29 @@ ul {
     top: 15px;
     right: 15px;
 }
+
+.useraccount > .btn {
+    width: 75px;
+    display: block;
+    float: right;
+    clear: right;
+}
+
+#public-link {
+    width: 500px;
+    // font-size: 13px;
+}
+#public-link > input.form-control::selection,
+#public-link > input.form-control::-moz-selection {
+    background: #CD76D4;
+}
+
+#public-link > input.form-control {
+    background-color: #FFF;
+    -webkit-touch-callout: text;
+    -webkit-user-select: text;
+    -khtml-user-select: text;
+    -moz-user-select: text;
+    -ms-user-select: text;
+    user-select: text;
+}

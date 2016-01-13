@@ -1,10 +1,4 @@
 module.exports = function() {
-    // server routes ===========================================================
-    // handle things like api calls
-    // authentication routes
-
-    // ROUTES FOR OUR API
-    // =============================================================================
     var express = require('express');
     // var app = express;
     var router = express.Router(); // get an instance of the express Router
@@ -15,27 +9,15 @@ module.exports = function() {
 
     // middleware to use for all requests
     router.use(function(req, res, next) {
-        console.log('Something is happening. ApiRoutes');
-
-        // POSTMAN: use test user a@a
-        if (!req.user) {
-            console.log('KEINOTEKOINEN KÄYTTÄJÄ TULOSSAAAAA!');
-            var userId;
-            if (req.body.user_id)
-                userId = req.body.user_id;
-            else
-                userId = '568d3b361be6557532e43398';
-
-            User.findById(userId, function(err, user) {
-                if (err)
-                    res.send(err);
-                req.user = user;
-                next();
-            });
-        } else
-            next();
-
-        // next(); // make sure we go to the next routes and don't stop here
+        // if (!req.user) {
+        //     if (req._parsedOriginalUrl.href.indexOf('/api/user/') > -1) {
+        //         next();
+        //     }
+        //     // user not logged in
+        //     res.redirect("/login");
+        // } else
+        //     next();
+        next();
     });
 
     // test route to make sure everything is working (accessed at GET http://localhost:8080/api)
@@ -45,10 +27,8 @@ module.exports = function() {
         });
     });
 
-
     router.route('/user/:user_id')
         .get(function(req, res) {
-            console.log(req.user_id);
             User.findById(req.params.user_id, function(err, user) {
                 if (err)
                     res.send(err);

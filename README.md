@@ -2,6 +2,10 @@
 
 Internet resume service
 
+## General
+
+We regret that the service is not yet fully operational. The features in the CV pages are implemented and functional, but we are missing many features we wanted to implement. However, the basics of the service are operational.
+
 ### Instructions
 
 #### Prerequisities

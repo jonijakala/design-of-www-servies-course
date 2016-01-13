@@ -10,7 +10,7 @@
     function ProfileController($scope, $timeout, MainCtrlService, MainApiService) {
         var vm = this;
         vm.CtrlData = MainCtrlService.data;
-        vm.asdf3 = 'Tää o asdf kolomone3';
+        // vm.public = $stateParams.public;
 
         vm.saveUser = function() {
             MainCtrlService.saveUser();

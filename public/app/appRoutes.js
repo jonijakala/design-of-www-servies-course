@@ -17,7 +17,7 @@
 
         $stateProvider
             .state('main', {
-                url: '',
+                url: '?public',
                 templateUrl: 'app/main/main.html',
                 controller: 'MainController',
                 controllerAs: 'main'
@@ -38,12 +38,6 @@
                 url: '/contact',
                 templateUrl: 'app/contact/contact.html',
                 controller: 'ContactController',
-                controllerAs: 'vm'
-            })
-            .state('material', {
-                url: '/material',
-                templateUrl: 'app/material/material.html',
-                controller: 'MaterialController',
                 controllerAs: 'vm'
             })
             .state('404', {
