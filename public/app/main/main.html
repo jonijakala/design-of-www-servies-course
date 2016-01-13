@@ -2,15 +2,12 @@
 <div class="useraccount">
 
         <a type="button" href="/auth/logout" ng-class="" class="btn btn-default btn-sm edit-main">Logout</a>
-        <!-- <button type="button" ng-click="main.editMode()" ng-class="{'red-btn':main.CtrlData.edit}" class="btn btn-default btn-sm edit-main">Share Public Link</button> -->
 </div>
     <div class="header">
         <img class="img-rounded img-profile" src="images/profile.jpg" width="150px" height="150px">
         <div class="profileinfo">
-            <!-- <h2 class="name contenteditable" ng-model="main.CtrlData.user.name">Ukkeli Pelimanni</h2> -->
             <h2 class="name" contenteditable="{{main.CtrlData.edit}}" ng-model="main.CtrlData.user.name">{{main.CtrlData.user.name}}</h2>
             <h3><small contenteditable="{{main.CtrlData.edit}}" ng-model="main.CtrlData.user.position">UX Antimessiah</small></h4>
-            <!-- <button ng-click="main.getData()">apiGet</button> -->
         </div>
         <div id="edit-panel">
         <button type="button" ng-click="main.editMode()" ng-class="{'red-btn':main.CtrlData.edit}" class="btn btn-default btn-sm edit-main">
@@ -35,18 +32,7 @@
         </div>
         
     </div>
-    <!-- <div class="content" ng-app="webresApp"> -->
     <div class="content" ui-view>
-        <!-- <button type="submit" class="btn btn-primary btn-lg" ng-click="addModule()">Add Module</button> -->
-        
-
-        <!-- <div ng-repeat="moduleinfo in modules"> -->
-
-        <!-- </div> -->
-        <!-- <div ng-view class="content"> -->
-        <!-- <div class="content" >
-        <p>{{vm.modul1.title}}</p>
-        </div> -->
     </div>
     
 </div>

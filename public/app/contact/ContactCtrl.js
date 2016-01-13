@@ -7,6 +7,5 @@
 
     function ContactController() {
         var vm = this;
-        // this.tagline = 'To the moon and back!';
     }
 })();

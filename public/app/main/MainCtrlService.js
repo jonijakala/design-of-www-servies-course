@@ -1,9 +1,9 @@
 (function() {
     angular
         .module('MainModule')
-        .factory('MainCtrlService', ['$rootScope', '$timeout', 'MainApiService', MainCtrlService]);
+        .factory('MainCtrlService', ['MainApiService', MainCtrlService]);
 
-    function MainCtrlService($rootScope, $timeout, MainApiService) {
+    function MainCtrlService(MainApiService) {
         return {
             updateUserData: function(userinfo) {
                 this.data.user = userinfo;

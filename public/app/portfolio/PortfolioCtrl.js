@@ -10,7 +10,5 @@
         console.log(MainCtrlService.userData);
         vm.userData = MainCtrlService.userData;
         vm.asdf = "superASdfasdfasdfasdf";
-        // var main = MainCtrl;
-        // this.tagline = 'To the moon and back!';
     }
 })();
