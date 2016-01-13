@@ -6,6 +6,10 @@ Internet resume service
 
 We regret that the service is not yet fully operational. The features in the CV pages are implemented and functional, but we are missing many features we wanted to implement. However, the basics of the service are operational.
 
+### Demo User
+
+You could try our demo user to see some ready content for the profile page. The auth is demo@aalto.fi, password: 'demo'
+
 ### Instructions
 
 #### Prerequisities
