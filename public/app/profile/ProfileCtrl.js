@@ -13,15 +13,15 @@
         vm.asdf3 = 'Tää o asdf kolomone3';
         // vm.edit = MainCtrlService.data;
 
-        vm.initSampleModules = function() {
-            MainApiService.addDummyDataInModule().then(function(response) {
-                console.log('dummydata');
-                console.log(response);
-                MainCtrlService.data.user = response.user.userinfo;
-            }, function(err) {
-                console.log(err);
-            });
-        };
+        // vm.initSampleModules = function() {
+        //     MainApiService.addDummyDataInModule().then(function(response) {
+        //         console.log('dummydata');
+        //         console.log(response);
+        //         MainCtrlService.data.user = response.user.userinfo;
+        //     }, function(err) {
+        //         console.log(err);
+        //     });
+        // };
 
         vm.saveUser = function() {
             MainCtrlService.saveUser();
@@ -49,7 +49,13 @@
                 // );
         };
 
+        // same as initSampleModules!
         vm.addModule = function() {
+            MainApiService.addDummyDataInModule().then(function(response) {
+                MainCtrlService.data.user = response.user.userinfo;
+            }, function(err) {
+                console.log(err);
+            });
         };
 
 

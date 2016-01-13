@@ -48,7 +48,9 @@
         };
 
         vm.initiateDummyModuls = function() {
-            MainApiService.addDummyDataInfModule().then(function(response) {}, function(err) {
+            MainApiService.addDummyDataInfModule().then(function(response) {
+                MainCtrlService.data.user = response.user.userinfo;
+            }, function(err) {
                 if (err)
                     console.log(err);
             });
